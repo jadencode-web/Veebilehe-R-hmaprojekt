@@ -52,6 +52,23 @@ Lisaks on kasutajal võimalus laadida koostatud ostunimekiri koos hindade ja kog
 
 Projekti lõppeesmärk on luua kasutajasõbralik veebileht, mis aitab vähendada toiduostude planeerimisele kuluvat aega ning võimaldab teha teadlikumaid ja soodsamaid ostuotsuseid.
 
+## Rühmatöö korraldus
+
+Projekti arendamisel jagame ülesanded rühmaliikmete vahel ja teeme koostööd, et veebileht valmiks õigeks ajaks.
+
+## Rühma kokkulepped
+
+- Iga rühmaliige vastutab oma ülesannete täitmise eest.
+- Peame kinni kokkulepitud tähtaegadest.
+- Probleemide tekkimisel anname neist teistele teada.
+- Vajadusel aitame üksteist.
+- Suuremad muudatused arutame enne tegemist ühiselt läbi.
+- Kõik rühmaliikmed panustavad GitHubi repositooriumisse.
+
+## Töökorraldus
+
+Kasutame GitHubi projekti failide haldamiseks ja muudatuste salvestamiseks. Iga rühmaliige teeb oma töö kohta commite, et projekti areng oleks jälgitav.
+
 ## Rühmaliikmed
 
 - Jaden Ordašokov
