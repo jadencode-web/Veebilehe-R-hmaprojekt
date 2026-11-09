@@ -53,7 +53,7 @@ Lisaks on kasutajal võimalus laadida koostatud ostunimekiri koos hindade ja kog
 Projekti lõppeesmärk on luua kasutajasõbralik veebileht, mis aitab vähendada toiduostude planeerimisele kuluvat aega ning võimaldab teha teadlikumaid ja soodsamaid ostuotsuseid.
 
 ## Rühmatöö 
-### korraldus
+### Korraldus
 
 Projekti arendamisel jagame ülesanded rühmaliikmete vahel ja teeme koostööd, et veebileht valmiks õigeks ajaks.
 
