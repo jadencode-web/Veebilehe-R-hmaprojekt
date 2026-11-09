@@ -2,7 +2,7 @@
 
 ## Projekti tutvustus
 
-Meie rühmatöö eesmärk on luua veebirakendus, mis aitab kasutajal planeerida oma nädala toidukordi ning leida valitud toitude valmistamiseks vajalikud toiduained võimalikult soodsa hinnaga.
+Meie rühmatöö eesmärk on luua veebileht, mis aitab kasutajal planeerida oma nädala toidukordi ning leida valitud toitude valmistamiseks vajalikud toiduained võimalikult soodsa hinnaga.
 
 Veebileht ühendab toidukordade planeerimise, ostunimekirja koostamise ja erinevate toidupoodide hindade võrdlemise ühtseks lahenduseks. Projekti eesmärk on muuta iganädalane toiduostude planeerimine lihtsamaks, mugavamaks ja rahaliselt säästlikumaks.
 
