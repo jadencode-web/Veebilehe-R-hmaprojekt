@@ -23,8 +23,10 @@ function addDays(date, days){const d = new Date(date);d.setDate(d.getDate()+days
 function weekStart(d){const a=new Date(d.getFullYear(),d.getMonth(),d.getDate());a.setDate(a.getDate()-(a.getDay()+6)%7);return a}
 let storage={};
 try {storage=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){storage={}}
+const requestedWeek = new URLSearchParams(location.search).get('nadal');
+const activeWeek = [requestedWeek, storage.week].find(isWeekKey) ?? dateKey(monday);
 const state = {
- week: storage.week||dateKey(monday),
+ week: activeWeek,
  plans: storage.plans&&typeof storage.plans==='object'?storage.plans:{},
  filter:'Kõik', search:'', selectedSlot:null, activePane:false
 };
@@ -55,6 +57,8 @@ function renderCalendar(){
  }
  DOM.calendar.innerHTML=html;
  const selected=itemsForWeek();const minutes=selected.reduce((sum,x)=>sum+estimatedMinutes(x.recipe),0);
+ const shoppingUrl = shoppingPlanUrl(selected);
+ for (const link of document.querySelectorAll('a[data-ostunimekiri]')) link.href = shoppingUrl;
  DOM.count.textContent=`${selected.length} / 21`;
  DOM.time.textContent=minutes>=60?`~ ${Math.floor(minutes/60)} t ${String(minutes%60).padStart(2,'0')} min`:`~ ${minutes} min`;
 }
@@ -79,32 +83,145 @@ function selectRecipe(id){const r=RETSEPTID.find(r=>r.id===id);if(!r)return;
  const {day,meal}=state.selectedSlot;const key=keyOf(day,meal);
  state.plans[key]=r.id;store();renderCalendar();closePanel();notify(`${PADEVAD[day]}: ${r.nimi} lisatud`);
 }
-function aggregateIngredients(){const map=new Map();for(const {recipe} of itemsForWeek()){for(const ing of recipe.koostisosad){const key=ing.id+'|'+ing.yhik;const prev=map.get(key)||{id:ing.id,nimi:ing.nimi,kogus:0,yhik:ing.yhik};prev.kogus+=Number(ing.kogus)||0;map.set(key,prev)}}return [...map.values()].sort((a,b)=>a.nimi.localeCompare(b.nimi,'et'))}
-function openShopping(){const ingredients=aggregateIngredients();if(!ingredients.length){notify('Lisa esmalt nädalaplaani vähemalt üks retsept.');return}
- try{localStorage.setItem('toiduplaneerija-ostunimekiri',JSON.stringify({kuupaev:new Date().toISOString(),nadal:state.week,koostisosad:ingredients}))}catch(e){}
- let modal=$('#ostunimekirja-modal');if(!modal){modal=document.createElement('dialog');modal.id='ostunimekirja-modal';modal.className='ostunimekirja-modal';document.body.appendChild(modal)}
- modal.innerHTML=`<div class="modal-head"><div><p class="ylakiri">SINU NÄDALA OSTUD</p><h2>Koostisosade nimekiri</h2></div><button type="button" id="sulge-ostud" aria-label="Sulge">×</button></div><p>${ingredients.length} erinevat koostisosa. Kogused on valitud retseptide põhjal kokku liidetud. Poodide hinnad lisanduvad pärast scraperite ühendamist.</p><ul>${ingredients.map(i=>`<li><span>${escapeHTML(i.nimi)}</span><strong>${i.kogus} ${escapeHTML(i.yhik)}</strong></li>`).join('')}</ul><button type="button" class="nupp nupp-tume" id="laadi-nimekiri">Laadi ostunimekiri alla</button>`;
- modal.showModal();
- $('#sulge-ostud').addEventListener('click',()=>modal.close());
- $('#laadi-nimekiri').addEventListener('click',()=>{
-  const text=['OSTUNIMEKIRI',`Nädal: ${formatRange(weekDate())}`,'',...ingredients.map(i=>`${i.nimi}: ${i.kogus} ${i.yhik}`),'','Hindu ei ole veel arvutatud.'].join('\n');
-  const blob=new Blob([text],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='ostunimekiri.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);notify('Ostunimekiri laaditi alla.');
+
+function shoppingPlanUrl(placements = itemsForWeek()) {
+ const params = new URLSearchParams({nadal: state.week});
+ const slots = placements.map(({day, meal, recipe}) => {
+  const slot = day * TOIDUD.length + TOIDUD.findIndex(item => item.id === meal);
+  return `${slot}:${recipe.id}`;
+ });
+ params.set('menuu', slots.join(','));
+ return `ostunimekiri.html?${params}`;
+}
+
+function isWeekKey(value) {
+ if (!/^\d{4}-\d{2}-\d{2}$/.test(value ?? '')) return false;
+ const [y, m, d] = value.split('-').map(Number);
+ const date = new Date(y, m - 1, d);
+ return date.getDay() === 1 && dateKey(date) === value;
+}
+
+function readShoppingPlan() {
+ const params = new URLSearchParams(location.search);
+ const week = params.get('nadal');
+ if (!isWeekKey(week) || !params.has('menuu')) {
+  return {week: state.week, placements: itemsForWeek()};
+ }
+
+ const placements = new Map();
+ for (const entry of params.get('menuu').split(',')) {
+  const match = /^(\d{1,2}):(R\d{3})$/.exec(entry);
+  if (!match) continue;
+  const slot = Number(match[1]);
+  const day = Math.floor(slot / TOIDUD.length);
+  const meal = TOIDUD[slot % TOIDUD.length].id;
+  const recipe = RETSEPTID.find(item => item.id === match[2]);
+  if (day < PADEVAD.length && recipe) placements.set(slot, {day, meal, recipe});
+ }
+
+ return {week, placements: [...placements.values()]};
+}
+
+function aggregateIngredients(placements) {
+ const ingredients = new Map();
+ for (const {recipe} of placements) {
+  for (const {id, nimi, kogus, yhik} of recipe.koostisosad) {
+   const key = `${id}|${yhik}`;
+   const total = ingredients.get(key) ?? {nimi, kogus: 0, yhik};
+   total.kogus += kogus;
+   ingredients.set(key, total);
+  }
+ }
+ return [...ingredients.values()].sort((a, b) => a.nimi.localeCompare(b.nimi, 'et'));
+}
+
+function openShopping() {
+ const placements = itemsForWeek();
+ if (!placements.length) {
+  notify('Lisa esmalt nädalaplaani vähemalt üks retsept.');
+  return;
+ }
+ location.assign(shoppingPlanUrl(placements));
+}
+
+function initShoppingPage() {
+ const {week, placements} = readShoppingPlan();
+ const [y, m, d] = week.split('-').map(Number);
+ const start = new Date(y, m - 1, d);
+ const ingredients = aggregateIngredients(placements);
+ const number = new Intl.NumberFormat('et-EE', {maximumFractionDigits: 3});
+ const quantity = item => `${number.format(item.kogus)} ${item.yhik}`;
+ const range = formatRange(start);
+ const list = $('#ostu-koostisosad');
+ const progress = $('#ostu-margitud');
+ const download = $('#laadi-nimekiri');
+
+ $('#ostu-nadal').textContent = range;
+ $('#ostu-toidukordi').textContent = placements.length;
+ progress.textContent = `0 / ${ingredients.length}`;
+ for (const link of document.querySelectorAll('[data-tagasi-plaani]')) {
+  link.href = `toiduplaan.html?${new URLSearchParams({nadal: week})}`;
+ }
+ if (!ingredients.length) return;
+
+ list.innerHTML = ingredients.map(item => `
+  <li class="osturida">
+   <label>
+    <input type="checkbox">
+    <span>${escapeHTML(item.nimi)}</span>
+    <strong>${escapeHTML(quantity(item))}</strong>
+   </label>
+  </li>`).join('');
+ list.addEventListener('change', () => {
+  const checked = list.querySelectorAll('input:checked').length;
+  progress.textContent = `${checked} / ${ingredients.length}`;
+ });
+
+ $('#ostu-retseptid').innerHTML = PADEVAD.map((day, index) => {
+  const meals = TOIDUD.flatMap(meal => {
+   const selection = placements.find(item => item.day === index && item.meal === meal.id);
+   return selection ? `<li><span>${meal.nimi}</span>${escapeHTML(selection.recipe.nimi)}</li>` : [];
+  });
+  return meals.length ? `<section class="ostu-paev"><h3>${day}</h3><ul>${meals.join('')}</ul></section>` : '';
+ }).join('');
+
+ list.hidden = false;
+ $('#ostu-menuu').hidden = false;
+ $('#ostu-juhis').hidden = false;
+ $('#ostu-tyhi').hidden = true;
+ download.disabled = false;
+ download.addEventListener('click', () => {
+  const text = ['OSTUNIMEKIRI', `Nädal: ${range}`, '',
+   ...ingredients.map(item => `${item.nimi}: ${quantity(item)}`)].join('\n');
+  const url = URL.createObjectURL(new Blob([text], {type: 'text/plain;charset=utf-8'}));
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = `ostunimekiri-${week}.txt`;
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
  });
 }
-DOM.calendar.addEventListener('click',e=>{
- const remove=e.target.closest('[data-remove]');if(remove){delete state.plans[remove.dataset.remove];store();renderCalendar();notify('Retsept eemaldatud.');return}
- const button=e.target.closest('[data-day][data-meal]');if(button)openPanel(Number(button.dataset.day),button.dataset.meal)
-});
-DOM.list.addEventListener('click',e=>{const b=e.target.closest('[data-recipe]');if(b)selectRecipe(b.dataset.recipe)});
-DOM.filters.addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;state.filter=b.dataset.filter;renderFilters();renderRecipes()});
-DOM.input.addEventListener('input',e=>{state.search=e.target.value.trim();renderRecipes()});
-$('#eelmine-nadal').addEventListener('click',()=>{state.week=dateKey(addDays(weekDate(),-7));store();renderCalendar();notify('Eelmine nädal')});
-$('#jargmine-nadal').addEventListener('click',()=>{state.week=dateKey(addDays(weekDate(),7));store();renderCalendar();notify('Järgmine nädal')});
-$('#sirvi-retsepte').addEventListener('click',()=>openPanel());
-$('#mobiilne-retseptivalik').addEventListener('click',()=>openPanel());
-$('#sulge-paneel').addEventListener('click',closePanel);
-$('#sulge-taust').addEventListener('click',closePanel);
-$('#koosta-ostunimekiri').addEventListener('click',openShopping);
-$('#alumine-ostunimekiri').addEventListener('click',openShopping);
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanel()});
-renderCalendar();renderFilters();renderRecipes();
+
+
+function initPlanner() {
+ DOM.calendar.addEventListener('click',e=>{
+  const remove=e.target.closest('[data-remove]');if(remove){delete state.plans[remove.dataset.remove];store();renderCalendar();notify('Retsept eemaldatud.');return}
+  const button=e.target.closest('[data-day][data-meal]');if(button)openPanel(Number(button.dataset.day),button.dataset.meal)
+ });
+ DOM.list.addEventListener('click',e=>{const b=e.target.closest('[data-recipe]');if(b)selectRecipe(b.dataset.recipe)});
+ DOM.filters.addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;state.filter=b.dataset.filter;renderFilters();renderRecipes()});
+ DOM.input.addEventListener('input',e=>{state.search=e.target.value.trim();renderRecipes()});
+ $('#eelmine-nadal').addEventListener('click',()=>{state.week=dateKey(addDays(weekDate(),-7));store();renderCalendar();notify('Eelmine nädal')});
+ $('#jargmine-nadal').addEventListener('click',()=>{state.week=dateKey(addDays(weekDate(),7));store();renderCalendar();notify('Järgmine nädal')});
+ $('#sirvi-retsepte').addEventListener('click',()=>openPanel());
+ $('#mobiilne-retseptivalik').addEventListener('click',()=>openPanel());
+ $('#sulge-paneel').addEventListener('click',closePanel);
+ $('#sulge-taust').addEventListener('click',closePanel);
+ $('#koosta-ostunimekiri').addEventListener('click',openShopping);
+ $('#alumine-ostunimekiri').addEventListener('click',openShopping);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')closePanel()});
+ renderCalendar();renderFilters();renderRecipes();
+}
+
+if (DOM.calendar) initPlanner();
+if (document.getElementById('ostunimekirja-leht')) initShoppingPage();

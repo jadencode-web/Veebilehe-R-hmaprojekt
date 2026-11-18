@@ -18,4 +18,190 @@ button{font-family:inherit}button:focus-visible{outline:3px solid #83b18b;outlin
 @media(min-width:1161px){.sulge-paneel{display:none}.paneeli-taust{display:none}.retseptipaneel{position:sticky}}
 @media(max-width:700px){.kalender{min-width:870px}.nadalavalik{gap:10px}.nadalavalik strong{font-size:14px}.teavitus{bottom:18px}.retseptipaneel{width:min(390px,95vw)}}
 
-.ostunimekirja-modal{max-width:min(570px,92vw);max-height:85vh;width:100%;border:1px solid var(--line);border-radius:20px;padding:25px;background:var(--paper);box-shadow:0 20px 65px #132c2066;color:var(--ink)}.ostunimekirja-modal::backdrop{background:#142c1e77}.modal-head{display:flex;justify-content:space-between;align-items:flex-start}.modal-head h2{margin:0}.modal-head button{background:var(--soft);border:0;border-radius:50%;width:40px;height:40px;font-size:24px;cursor:pointer}.ostunimekirja-modal>p{font-size:13px;color:var(--muted);line-height:1.6}.ostunimekirja-modal ul{padding:0;list-style:none;max-height:47vh;overflow:auto}.ostunimekirja-modal li{display:flex;justify-content:space-between;gap:20px;padding:9px 3px;border-bottom:1px solid var(--line);font-size:13px}.ostunimekirja-modal li strong{white-space:nowrap}.ostunimekirja-modal>.nupp{margin-top:13px;width:100%}
+/* Ostunimekirja paigutus kasutab nädalaplaani ühiseid värve ja komponente. */
+.osturakendus {
+  grid-template-columns: clamp(170px, 14vw, 218px) minmax(0, 1fr);
+}
+
+.osturakendus .sisu {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.ostu-nadal {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.ostukokkuvote .nupp {
+  border: 0;
+}
+
+.ostukokkuvote .nupp:disabled {
+  background: var(--soft);
+  color: var(--muted);
+  cursor: default;
+}
+
+.ostuvaade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 330px);
+  align-items: start;
+  gap: 18px;
+}
+
+.ostuvaade:has(#ostu-menuu[hidden]) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.ostukaart {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.ostukaardi-pais {
+  padding: 19px 21px;
+}
+
+.ostukaardi-pais h2 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -.5px;
+}
+
+.ostukaardi-pais p,
+.ostu-tyhi p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.ostuloend {
+  margin: 0;
+  padding: 0 21px 12px;
+  list-style: none;
+}
+
+.osturida {
+  border-top: 1px solid var(--line);
+}
+
+.osturida label {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 51px;
+  cursor: pointer;
+}
+
+.osturida input {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+
+.osturida span {
+  overflow-wrap: anywhere;
+}
+
+.osturida strong {
+  padding: 4px 9px;
+  border-radius: 8px;
+  background: var(--soft);
+  color: var(--green-dark);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.osturida input:checked + span {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.ostu-paev {
+  margin: 0 21px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.ostu-paev:last-child {
+  margin-bottom: 7px;
+}
+
+.ostu-paev h3 {
+  margin: 0 0 7px;
+  color: var(--green-dark);
+  font-size: 13px;
+}
+
+.ostu-paev ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ostu-paev li {
+  font-size: 13px;
+}
+
+.ostu-paev li span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.ostu-tyhi {
+  padding: 13px 18px 30px;
+  text-align: center;
+}
+
+.ostu-tyhi h3 {
+  margin: 12px 0 0;
+  font-size: 16px;
+}
+
+.ostu-tyhi .info-ikoon {
+  margin-inline: auto;
+}
+
+.ostu-tyhi .nupp {
+  margin: 15px 0 0;
+}
+
+@media (max-width: 920px) {
+  .ostuvaade {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .ostukokkuvote .ostu-nadal {
+    flex: 1 0 100%;
+  }
+
+  .ostukokkuvote .nupp {
+    flex: 1 0 100%;
+  }
+
+  .ostukaardi-pais {
+    padding: 16px;
+  }
+
+  .ostuloend {
+    padding-inline: 16px;
+  }
+
+  .ostu-paev {
+    margin-inline: 16px;
+  }
+}
+

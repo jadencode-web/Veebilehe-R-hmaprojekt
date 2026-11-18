@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vaata oma nädalaplaanist koostatud ostunimekirja.">
+  <title>Ostunimekiri | Toiduplaneerija</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="rakendus osturakendus">
+    <aside class="kulgmenu" aria-label="Peamenüü">
+      <a class="logo" href="../index.html"><span class="logo-ikoon" aria-hidden="true">✳</span><span>Roheline Lauad</span></a>
+      <p class="logo-alatekst">Tark toiduplaneerija</p>
+      <nav class="menuulingid" aria-label="Navigeerimine">
+        <a href="../index.html"><span aria-hidden="true">⌂</span> Avaleht</a>
+        <a href="toiduplaan.html" data-tagasi-plaani><span aria-hidden="true">▦</span> Nädalaplaan</a>
+        <a href="ostunimekiri.html" class="aktiivne" aria-current="page"><span aria-hidden="true">♧</span> Ostunimekiri</a>
+      </nav>
+      <div class="kulgmenu-alumine"><span class="avatari-ring">RL</span><span>Meie toiduplaan</span></div>
+    </aside>
+
+    <main class="sisu" id="ostunimekirja-leht">
+      <header class="lehe-pealkiri">
+        <div>
+          <h1>Ostunimekiri <span aria-hidden="true">✳</span></h1>
+          <p class="kirjeldus">Nädalaplaani retseptide põhjal kokku liidetud koostisosad.</p>
+        </div>
+        <a class="tekst-nupp" href="toiduplaan.html" data-tagasi-plaani>Tagasi nädalaplaani juurde <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <section class="nadalakokkuvote ostukokkuvote" aria-label="Ostunimekirja kokkuvõte">
+        <div class="statistika ostu-nadal"><span class="stat-ikoon" aria-hidden="true">▦</span><span><strong id="ostu-nadal">Nädalaplaan</strong><small>Ostunimekirja nädal</small></span></div>
+        <div class="statistika"><span class="stat-ikoon" aria-hidden="true">♧</span><span><strong id="ostu-toidukordi">0</strong><small>valitud toidukorda</small></span></div>
+        <div class="statistika"><span class="stat-ikoon" aria-hidden="true">✓</span><span><strong id="ostu-margitud" role="status">0 / 0</strong><small>koostisosa märgitud</small></span></div>
+        <button class="nupp nupp-tume" type="button" id="laadi-nimekiri" disabled>Laadi nimekiri alla <span aria-hidden="true">↓</span></button>
+      </section>
+
+      <div class="ostuvaade">
+        <section class="ostukaart" aria-labelledby="koostisosade-pealkiri">
+          <header class="ostukaardi-pais">
+            <h2 id="koostisosade-pealkiri">Vajalikud koostisosad</h2>
+            <p id="ostu-juhis" hidden>Märgi toode, kui see on ostetud või juba kodus olemas.</p>
+          </header>
+          <div class="ostu-tyhi" id="ostu-tyhi">
+            <span class="info-ikoon" aria-hidden="true">♧</span>
+            <h3>Ostunimekiri on tühi</h3>
+            <p>Lisa nädalaplaani vähemalt üks retsept ja klõpsa „Koosta ostunimekiri”.</p>
+            <a class="nupp nupp-tume" href="toiduplaan.html" data-tagasi-plaani>Ava nädalaplaan <span aria-hidden="true">→</span></a>
+          </div>
+          <ul class="ostuloend" id="ostu-koostisosad" hidden></ul>
+        </section>
+
+        <aside class="ostukaart" id="ostu-menuu" aria-labelledby="ostu-menuu-pealkiri" hidden>
+          <header class="ostukaardi-pais">
+            <h2 id="ostu-menuu-pealkiri">Valitud toidukorrad</h2>
+            <p>Retseptid, millest ostunimekiri kokku pandi.</p>
+          </header>
+          <div id="ostu-retseptid"></div>
+        </aside>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
