@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "kartul",
+    "otsisõna": "kartul",
+    "peab_sisaldama": [
+      "kartul"
+    ],
+    "ei_sobi": [
+      "friikartul",
+      "krõpsud",
+      "püree",
+      "salat"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 2000,
+    "kaalukaup": true
+  },
+  {
+    "id": "sibul",
+    "otsisõna": "sibul",
+    "peab_sisaldama": [
+      "sibul"
+    ],
+    "ei_sobi": [
+      "roheline",
+      "punane",
+      "praetud",
+      "krõbe"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 1000,
+    "kaalukaup": true
+  },
+  {
+    "id": "porgand",
+    "otsisõna": "porgand",
+    "peab_sisaldama": [
+      "porgand"
+    ],
+    "ei_sobi": [
+      "mahl",
+      "salat",
+      "beebi"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 1000,
+    "kaalukaup": true
+  },
+  {
+    "id": "kapsas",
+    "otsisõna": "valge peakapsas",
+    "peab_sisaldama": [
+      "kapsas"
+    ],
+    "ei_sobi": [
+      "hapu",
+      "salat",
+      "punane"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 1500,
+    "kaalukaup": true
+  },
+  {
+    "id": "hapukapsas",
+    "otsisõna": "hapukapsas",
+    "peab_sisaldama": [
+      "hapukapsas"
+    ],
+    "ei_sobi": [
+      "salat",
+      "hautatud"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": false
+  },
+  {
+    "id": "peet",
+    "otsisõna": "punane peet",
+    "peab_sisaldama": [
+      "peet"
+    ],
+    "ei_sobi": [
+      "salat",
+      "marineeritud",
+      "mahl"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 1000,
+    "kaalukaup": true
+  },
+  {
+    "id": "kurk",
+    "otsisõna": "kurk",
+    "peab_sisaldama": [
+      "kurk"
+    ],
+    "ei_sobi": [
+      "hapu",
+      "marineeritud",
+      "salat"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 300,
+    "kaalukaup": true
+  },
+  {
+    "id": "tomat",
+    "otsisõna": "tomat",
+    "peab_sisaldama": [
+      "tomat"
+    ],
+    "ei_sobi": [
+      "purustatud",
+      "kaste",
+      "pasta",
+      "kuivatatud",
+      "kirss"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": true
+  },
+  {
+    "id": "paprika",
+    "otsisõna": "paprika",
+    "peab_sisaldama": [
+      "paprika"
+    ],
+    "ei_sobi": [
+      "pulber",
+      "marineeritud",
+      "kaste"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": true
+  },
+  {
+    "id": "suvikõrvits",
+    "otsisõna": "suvikõrvits",
+    "peab_sisaldama": [
+      "suvikõrvits"
+    ],
+    "ei_sobi": [
+      "marineeritud"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": true
+  },
+  {
+    "id": "kõrvits",
+    "otsisõna": "kõrvits",
+    "peab_sisaldama": [
+      "kõrvits"
+    ],
+    "ei_sobi": [
+      "seemned",
+      "marineeritud",
+      "supp"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 1000,
+    "kaalukaup": true
+  },
+  {
+    "id": "brokoli",
+    "otsisõna": "brokoli",
+    "peab_sisaldama": [
+      "brokoli"
+    ],
+    "ei_sobi": [
+      "külmutatud segu",
+      "supp"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": true
+  },
+  {
+    "id": "lillkapsas",
+    "otsisõna": "lillkapsas",
+    "peab_sisaldama": [
+      "lillkapsas"
+    ],
+    "ei_sobi": [
+      "külmutatud segu",
+      "supp"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 800,
+    "kaalukaup": true
+  },
+  {
+    "id": "küüslauk",
+    "otsisõna": "küüslauk",
+    "peab_sisaldama": [
+      "küüslauk"
+    ],
+    "ei_sobi": [
+      "pulber",
+      "kaste",
+      "marineeritud",
+      "graanulid"
+    ],
+    "ühik": "tk",
+    "tavaline_pakend": 1,
+    "kaalukaup": true
+  },
+  {
+    "id": "till",
+    "otsisõna": "värske till",
+    "peab_sisaldama": [
+      "till"
+    ],
+    "ei_sobi": [
+      "kuivatatud",
+      "seemned"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 20,
+    "kaalukaup": false
+  },
+  {
+    "id": "šampinjonid",
+    "otsisõna": "šampinjon",
+    "peab_sisaldama": [
+      "šampinjon"
+    ],
+    "ei_sobi": [
+      "konserv",
+      "marineeritud",
+      "supp"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 250,
+    "kaalukaup": false
+  },
+  {
+    "id": "õun",
+    "otsisõna": "õun",
+    "peab_sisaldama": [
+      "õun"
+    ],
+    "ei_sobi": [
+      "mahl",
+      "kuivatatud",
+      "püree",
+      "siider"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 1000,
+    "kaalukaup": true
+  },
+  {
+    "id": "banaan",
+    "otsisõna": "banaan",
+    "peab_sisaldama": [
+      "banaan"
+    ],
+    "ei_sobi": [
+      "kuivatatud",
+      "krõpsud"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 1000,
+    "kaalukaup": true
+  },
+  {
+    "id": "spinat",
+    "otsisõna": "külmutatud spinat",
+    "peab_sisaldama": [
+      "spinat"
+    ],
+    "ei_sobi": [
+      "värske",
+      "beebi",
+      "salat"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "herned",
+    "otsisõna": "külmutatud rohelised herned",
+    "peab_sisaldama": [
+      "herne"
+    ],
+    "ei_sobi": [
+      "konserv",
+      "poolitatud",
+      "kuivatatud"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "marjad",
+    "otsisõna": "külmutatud marjasegu",
+    "peab_sisaldama": [
+      "mari",
+      "marja"
+    ],
+    "ei_sobi": [
+      "moos",
+      "jogurt",
+      "mahl"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "hakkliha",
+    "otsisõna": "sea-veise hakkliha",
+    "peab_sisaldama": [
+      "hakkliha"
+    ],
+    "ei_sobi": [
+      "kana",
+      "kalkun",
+      "broiler",
+      "taimne"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": false
+  },
+  {
+    "id": "kanafilee",
+    "otsisõna": "broilerifilee",
+    "peab_sisaldama": [
+      "broilerifilee",
+      "kanafilee",
+      "rinnafilee"
+    ],
+    "ei_sobi": [
+      "marineeritud",
+      "suitsu",
+      "keedu",
+      "paneeritud"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": false
+  },
+  {
+    "id": "kanakoivad",
+    "otsisõna": "broileri koivad",
+    "peab_sisaldama": [
+      "koib",
+      "koiv"
+    ],
+    "ei_sobi": [
+      "marineeritud",
+      "suitsu",
+      "grill"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 1000,
+    "kaalukaup": false
+  },
+  {
+    "id": "sealiha",
+    "otsisõna": "sea kaelakarbonaad",
+    "peab_sisaldama": [
+      "kaelakarbonaad",
+      "kaelaliha"
+    ],
+    "ei_sobi": [
+      "marineeritud",
+      "suitsu",
+      "šašlõkk",
+      "grill"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": false
+  },
+  {
+    "id": "suitsuribi",
+    "otsisõna": "suitsuribi",
+    "peab_sisaldama": [
+      "ribi"
+    ],
+    "ei_sobi": [
+      "kana",
+      "kalkun"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": false
+  },
+  {
+    "id": "peekon",
+    "otsisõna": "peekon",
+    "peab_sisaldama": [
+      "peekon"
+    ],
+    "ei_sobi": [
+      "kana",
+      "kalkun",
+      "taimne"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 150,
+    "kaalukaup": false
+  },
+  {
+    "id": "viiner",
+    "otsisõna": "viiner",
+    "peab_sisaldama": [
+      "viiner"
+    ],
+    "ei_sobi": [
+      "kana",
+      "taimne",
+      "juustu"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "lõhefilee",
+    "otsisõna": "lõhefilee",
+    "peab_sisaldama": [
+      "lõhe"
+    ],
+    "ei_sobi": [
+      "suitsu",
+      "soolatud",
+      "marineeritud",
+      "konserv"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "valge_kala",
+    "otsisõna": "valge kala filee",
+    "peab_sisaldama": [
+      "tursk",
+      "heik",
+      "pollock",
+      "kala"
+    ],
+    "ei_sobi": [
+      "paneeritud",
+      "suitsu",
+      "pulgad"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "räimefilee",
+    "otsisõna": "räimefilee",
+    "peab_sisaldama": [
+      "räim"
+    ],
+    "ei_sobi": [
+      "marineeritud",
+      "suitsu",
+      "konserv",
+      "paneeritud"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "kilu",
+    "otsisõna": "vürtsikilu",
+    "peab_sisaldama": [
+      "kilu"
+    ],
+    "ei_sobi": [
+      "tomatis",
+      "õlis",
+      "pasta"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 240,
+    "kaalukaup": false
+  },
+  {
+    "id": "tuunikala",
+    "otsisõna": "tuunikala konserv",
+    "peab_sisaldama": [
+      "tuun"
+    ],
+    "ei_sobi": [
+      "salat",
+      "pasta",
+      "pastee"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 160,
+    "kaalukaup": false
+  },
+  {
+    "id": "munad",
+    "otsisõna": "kanamunad",
+    "peab_sisaldama": [
+      "muna"
+    ],
+    "ei_sobi": [
+      "šokolaadi",
+      "vutt",
+      "keedetud",
+      "nuudl"
+    ],
+    "ühik": "tk",
+    "tavaline_pakend": 10,
+    "kaalukaup": false
+  },
+  {
+    "id": "piim",
+    "otsisõna": "piim 2,5%",
+    "peab_sisaldama": [
+      "piim"
+    ],
+    "ei_sobi": [
+      "kohvi",
+      "kakao",
+      "laktoosivaba",
+      "kaera",
+      "soja",
+      "kondens",
+      "kookos"
+    ],
+    "ühik": "ml",
+    "tavaline_pakend": 1000,
+    "kaalukaup": false
+  },
+  {
+    "id": "hapukoor",
+    "otsisõna": "hapukoor 20%",
+    "peab_sisaldama": [
+      "hapukoor"
+    ],
+    "ei_sobi": [
+      "kaste",
+      "dip",
+      "laktoosivaba"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "koor",
+    "otsisõna": "toidukoor 10%",
+    "peab_sisaldama": [
+      "koor"
+    ],
+    "ei_sobi": [
+      "vahu",
+      "kohvi",
+      "taimne",
+      "laktoosivaba",
+      "hapu"
+    ],
+    "ühik": "ml",
+    "tavaline_pakend": 200,
+    "kaalukaup": false
+  },
+  {
+    "id": "kohupiim",
+    "otsisõna": "kohupiim",
+    "peab_sisaldama": [
+      "kohupiim"
+    ],
+    "ei_sobi": [
+      "kreem",
+      "batoon",
+      "maitsestatud",
+      "vanilli"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "jogurt",
+    "otsisõna": "maitsestamata jogurt",
+    "peab_sisaldama": [
+      "jogurt"
+    ],
+    "ei_sobi": [
+      "maasika",
+      "vanilli",
+      "joogi",
+      "kreeka"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "juust",
+    "otsisõna": "juust riivitud",
+    "peab_sisaldama": [
+      "juust"
+    ],
+    "ei_sobi": [
+      "sulatatud",
+      "toorjuust",
+      "kodujuust",
+      "viilutatud"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 200,
+    "kaalukaup": false
+  },
+  {
+    "id": "või",
+    "otsisõna": "või 82%",
+    "peab_sisaldama": [
+      "või"
+    ],
+    "ei_sobi": [
+      "küüslaugu",
+      "maapähkli",
+      "taimne",
+      "leib"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 200,
+    "kaalukaup": false
+  },
+  {
+    "id": "rukkileib",
+    "otsisõna": "rukkileib",
+    "peab_sisaldama": [
+      "leib"
+    ],
+    "ei_sobi": [
+      "seemne",
+      "krõps",
+      "kuivikud"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 600,
+    "kaalukaup": false
+  },
+  {
+    "id": "sai",
+    "otsisõna": "röstsai",
+    "peab_sisaldama": [
+      "sai"
+    ],
+    "ei_sobi": [
+      "täistera",
+      "magus",
+      "rosina",
+      "riiv",
+      "saiake"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": false
+  },
+  {
+    "id": "tortilla",
+    "otsisõna": "tortilla",
+    "peab_sisaldama": [
+      "tortilla"
+    ],
+    "ei_sobi": [
+      "krõpsud",
+      "mini"
+    ],
+    "ühik": "tk",
+    "tavaline_pakend": 8,
+    "kaalukaup": false
+  },
+  {
+    "id": "pasta",
+    "otsisõna": "pasta",
+    "peab_sisaldama": [
+      "pasta",
+      "spagetid",
+      "penne",
+      "makaron",
+      "fusilli"
+    ],
+    "ei_sobi": [
+      "valmistoit",
+      "salat",
+      "kaste"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": false
+  },
+  {
+    "id": "riis",
+    "otsisõna": "pikateraline riis",
+    "peab_sisaldama": [
+      "riis"
+    ],
+    "ei_sobi": [
+      "keedukott",
+      "valmis",
+      "puder",
+      "jahu"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 1000,
+    "kaalukaup": false
+  },
+  {
+    "id": "tatar",
+    "otsisõna": "tatar",
+    "peab_sisaldama": [
+      "tatar"
+    ],
+    "ei_sobi": [
+      "helbed",
+      "jahu",
+      "keedukott"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 1000,
+    "kaalukaup": false
+  },
+  {
+    "id": "kaerahelbed",
+    "otsisõna": "kaerahelbed",
+    "peab_sisaldama": [
+      "kaerahelbe"
+    ],
+    "ei_sobi": [
+      "küpsis",
+      "batoon",
+      "jahu",
+      "kiirpuder"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": false
+  },
+  {
+    "id": "manna",
+    "otsisõna": "manna",
+    "peab_sisaldama": [
+      "manna"
+    ],
+    "ei_sobi": [
+      "puder valmis",
+      "vaht"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": false
+  },
+  {
+    "id": "nisujahu",
+    "otsisõna": "nisujahu",
+    "peab_sisaldama": [
+      "jahu"
+    ],
+    "ei_sobi": [
+      "täistera",
+      "rukki",
+      "pannkoogisegu"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 1000,
+    "kaalukaup": false
+  },
+  {
+    "id": "odrakruubid",
+    "otsisõna": "odrakruubid",
+    "peab_sisaldama": [
+      "kruup"
+    ],
+    "ei_sobi": [
+      "helbed",
+      "jahu"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": false
+  },
+  {
+    "id": "läätsed",
+    "otsisõna": "punased läätsed",
+    "peab_sisaldama": [
+      "lääts"
+    ],
+    "ei_sobi": [
+      "konserv",
+      "supp",
+      "pasta"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": false
+  },
+  {
+    "id": "herned_kuivad",
+    "otsisõna": "poolitatud kuivatatud herned",
+    "peab_sisaldama": [
+      "herne"
+    ],
+    "ei_sobi": [
+      "konserv",
+      "külmutatud",
+      "rohelised"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 500,
+    "kaalukaup": false
+  },
+  {
+    "id": "suhkur",
+    "otsisõna": "suhkur",
+    "peab_sisaldama": [
+      "suhkur"
+    ],
+    "ei_sobi": [
+      "vanilli",
+      "pruun",
+      "tuhk",
+      "fariin"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 1000,
+    "kaalukaup": false
+  },
+  {
+    "id": "purustatud_tomatid",
+    "otsisõna": "purustatud tomatid",
+    "peab_sisaldama": [
+      "tomat"
+    ],
+    "ei_sobi": [
+      "kaste",
+      "ketšup",
+      "kuivatatud"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "tomatipasta",
+    "otsisõna": "tomatipasta",
+    "peab_sisaldama": [
+      "tomatipasta",
+      "tomatipüree"
+    ],
+    "ei_sobi": [
+      "ketšup",
+      "kaste"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 140,
+    "kaalukaup": false
+  },
+  {
+    "id": "kookospiim",
+    "otsisõna": "kookospiim",
+    "peab_sisaldama": [
+      "kookospiim"
+    ],
+    "ei_sobi": [
+      "jook",
+      "kreem",
+      "hiutaled"
+    ],
+    "ühik": "ml",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "kikerherned",
+    "otsisõna": "kikerherned konserv",
+    "peab_sisaldama": [
+      "kikerherne"
+    ],
+    "ei_sobi": [
+      "kuivatatud",
+      "hummus",
+      "jahu"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "mais",
+    "otsisõna": "maisikonserv",
+    "peab_sisaldama": [
+      "mais"
+    ],
+    "ei_sobi": [
+      "popkorn",
+      "helbed",
+      "külmutatud"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 340,
+    "kaalukaup": false
+  },
+  {
+    "id": "õli",
+    "otsisõna": "rapsiõli",
+    "peab_sisaldama": [
+      "õli"
+    ],
+    "ei_sobi": [
+      "oliivi",
+      "spray",
+      "seesami"
+    ],
+    "ühik": "ml",
+    "tavaline_pakend": 1000,
+    "kaalukaup": false
+  },
+  {
+    "id": "moos",
+    "otsisõna": "moos",
+    "peab_sisaldama": [
+      "moos"
+    ],
+    "ei_sobi": [
+      "šokolaadi",
+      "pirukas"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "riivsai",
+    "otsisõna": "riivsai",
+    "peab_sisaldama": [
+      "riivsai"
+    ],
+    "ei_sobi": [
+      "panko",
+      "kuivikud"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "hapukurk",
+    "otsisõna": "hapukurk",
+    "peab_sisaldama": [
+      "hapukurk",
+      "kurgid"
+    ],
+    "ei_sobi": [
+      "salat",
+      "kaste"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "tofu",
+    "otsisõna": "tofu",
+    "peab_sisaldama": [
+      "tofu"
+    ],
+    "ei_sobi": [
+      "suitsu",
+      "marineeritud",
+      "dessert"
+    ],
+    "ühik": "g",
+    "tavaline_pakend": 400,
+    "kaalukaup": false
+  },
+  {
+    "id": "sojakaste",
+    "otsisõna": "sojakaste",
+    "peab_sisaldama": [
+      "sojakaste"
+    ],
+    "ei_sobi": [
+      "marinaad",
+      "teriyaki"
+    ],
+    "ühik": "ml",
+    "tavaline_pakend": 250,
+    "kaalukaup": false
+  }
+]

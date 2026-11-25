@@ -1,78 +1,77 @@
-# SoodneKorv
+# Veebilehe-Ryhmaprojekt - Toidukordade planeerija ja ostukorvi hinnavõrdlus
 
-**Mida leht teeb:** SoodneKorv aitab koostada nädala toiduplaani 50 retsepti seast ja leiab, kas Rimis, Selveris või Maximas on kogu ostukorv kõige soodsam. Kasutaja valib igaks päevaks hommiku-, lõuna- ja õhtusöögi, ostunimekirja lehel arvutab server Pythoniga, mida ja mitu pakki osta ning millisest poest või poepaarist tuleb kõige odavam.
+## Projekti tutvustus
 
-**Leht:** LINK KODU.UT.EE LEHELE
+Meie rühmatöö eesmärk on luua veebileht, mis aitab kasutajal planeerida oma nädala toidukordi ning leida valitud toitude valmistamiseks vajalikud toiduained võimalikult soodsa hinnaga.
 
-## Tiim ja tööjaotus
+Veebileht ühendab toidukordade planeerimise, ostunimekirja koostamise ja erinevate toidupoodide hindade võrdlemise ühtseks lahenduseks. Projekti eesmärk on muuta iganädalane toiduostude planeerimine lihtsamaks, mugavamaks ja rahaliselt säästlikumaks.
 
-| Tiimiliige | Mida tegi |
-|---|---|
-| NIMI 1 | ... |
-| NIMI 2 | ... |
-| NIMI 3 | ... |
+## Veebilehe ülesehitus
 
-## Lehed
+Veebileht koosneb kolmest põhilehest.
 
-| Leht | Mis seal on |
-|---|---|
-| `index.html` (avaleht) | tutvustus, kasutusjuhend, nädalaplaani seis, fotode autorid |
-| `toiduplaan.html` (nädalaplaan) | 7 päeva x 3 toidukorda, retseptide otsing ja sorteerimine |
-| `ostunimekiri.html` | soodsaim ostukorv, ostunimekiri poodide kaupa, poodide võrdlus, allalaadimine ja printimine |
+### 1. Avaleht - tutvustus ja kasutusjuhend
 
-## Kuidas see töötab
+Avalehel tutvustatakse veebirakenduse eesmärki, peamisi võimalusi ja kasutamise põhimõtteid. Kasutajale selgitatakse samm-sammult, kuidas koostada nädalamenüüd ja saada selle põhjal ostunimekiri.
 
-```
-scraperid/*.py              ->  andmed/hinnad/hinnad_rimi.json, hinnad_selver.json, hinnad_maxima.json
-toiduplaan.html             ->  kasutaja valib retseptid (salvestub brauserisse)
-ostunimekiri.html           ->  saadab valiku serverisse
-public_html/cgi-bin/arvuta.py -> Python arvutab iga poe ja poepaari hinna ning tagastab tulemuse
-```
+### 2. Toidukordade planeerimine
 
-## Failid
+Teisel lehel saab kasutaja koostada endale terve nädala toiduplaani.
 
-| Kaust / fail | Mis see on |
-|---|---|
-| `public_html/css/uhine.css` | kõigi lehtede ühine stiil |
-| `public_html/css/index.css`, `toiduplaan.css`, `ostunimekiri.css` | iga lehe oma stiil |
-| `public_html/js/uhine.js` | kõigi lehtede ühised funktsioonid |
-| `public_html/js/index.js`, `toiduplaan.js`, `ostunimekiri.js` | iga lehe oma JavaScript |
-| `public_html/img/` | logo ja ikoonid (SVG) |
-| `public_html/fonts/` | font DM Sans (SIL Open Font License) |
-| `public_html/cgi-bin/arvuta.py` | Pythoni backend: arvutab ostukorvi |
-| `public_html/cgi-bin/ostunimekiri_fail.py` | Pythoni backend: teeb ostunimekirjast HTML-faili, mis töötab telefonis ilma internetita |
-| `andmed/ostunimekiri_mall.html` | allalaaditava ostunimekirja kujundus |
-| `public_html/cgi-bin/retseptid.py` | Pythoni backend: saadab retseptid lehele |
-| `andmed/` | retseptid, koostisosad, valitud tooted ja hinnad |
-| `scraperid/` | Rimi, Selveri ja Maxima scraperid |
+Kasutaja saab:
+- Valida hommiku-, lõuna- ja õhtusööke.
+- Kasutada filtreid sobivate toidukordade leidmiseks.
+- Planeerida toidukorrad kõigiks seitsmeks nädalapäevaks.
+- Kinnitada oma valikud ja liikuda edasi ostunimekirja koostamise juurde.
 
-`andmed/` ja `scraperid/` on meelega väljaspool `public_html`-i, et need ei oleks veebis avalikud.
+Valitud toidukordade põhjal koostatakse vajalike toiduainete ja koguste nimekiri.
 
-## Käivitamine oma arvutis
+### 3. Ostunimekiri ja hinnavõrdlus
 
-```
-python3 kaivita_lokaalselt.py
-```
-Ava brauseris http://127.0.0.1:8000
+Kolmandal lehel kuvatakse kasutaja nädalamenüü põhjal koostatud ostunimekiri ning võrreldakse vajalike toodete hindu erinevates toidupoodides.
 
-Hindade uuendamine:
-```
-pip install requests beautifulsoup4
-python3 scraperid/rimi.py
-python3 scraperid/selver.py
-python3 scraperid/maxima.py
-```
+Planeeritud on võrrelda kolme kaupluse hindu:
+- Maxima
+- Selver
+- Rimi
 
-## Kodu.ut.ee serverisse panek
+Veebirakenduse eesmärk on koguda toodete hinnainfot kaupluste veebilehtedelt ning arvutada, millises poes oleks ostude tegemine kõige soodsam.
 
-1. Kopeeri `public_html` kausta sisu serveris kausta `~/public_html`.
-2. Kopeeri `andmed` kaust serveris kausta `~/andmed` (kodukausta, mitte public_html-i sisse).
-3. Anna Pythoni failidele käivitusõigus: `chmod 755 ~/public_html/cgi-bin/*.py`
-4. Ava leht ja proovi ostunimekirja lehte.
+Võrdluses arvestatakse nii kogu ostunimekirja maksumust ühes kaupluses kui ka võimalust jagada ostud mitme kaupluse vahel.
 
-## Allikad
+Kasutajale kuvatakse:
+- Soovituslik kauplus või kauplused.
+- Ostetavate toodete nimekiri.
+- Iga toote vajalik kogus ja hind.
+- Ostunimekirja kogumaksumus.
+- Erinevate ostuvõimaluste hinnavõrdlus.
 
-- Toidufotod: Wikimedia Commons, Pixabay ja Pexels, iga foto autor ja litsents on avalehel jaotises "Fotode autorid".
-- Font: DM Sans, Google Fonts (SIL Open Font License).
-- Logo ja ikoonid: tiimi oma, joonistatud SVG-na.
-- JavaScripti allikad (MDN Web Docs) on iga JS-faili alguses. Pythonis ei ole kasutatud ühtegi raamistikku, ainult standardteeki.
+Lisaks on kasutajal võimalus laadida koostatud ostunimekiri koos hindade ja kogustega alla PDF-failina.
+
+## Projekti eesmärk
+
+Projekti lõppeesmärk on luua kasutajasõbralik veebileht, mis aitab vähendada toiduostude planeerimisele kuluvat aega ning võimaldab teha teadlikumaid ja soodsamaid ostuotsuseid.
+
+## Rühmatöö 
+### Korraldus
+
+Projekti arendamisel jagame ülesanded rühmaliikmete vahel ja teeme koostööd, et veebileht valmiks õigeks ajaks.
+
+### Rühma kokkulepped
+
+- Iga rühmaliige vastutab oma ülesannete täitmise eest.
+- Peame kinni kokkulepitud tähtaegadest.
+- Probleemide tekkimisel anname neist teistele teada.
+- Vajadusel aitame üksteist.
+- Suuremad muudatused arutame enne tegemist ühiselt läbi.
+- Kõik rühmaliikmed panustavad GitHubi repositooriumisse.
+
+### Töökorraldus
+
+Kasutame GitHubi projekti failide haldamiseks ja muudatuste salvestamiseks. Iga rühmaliige teeb oma töö kohta commite, et projekti areng oleks jälgitav.
+
+## Rühmaliikmed
+
+- Jaden Ordašokov
+- Reevo Veelmaa
+- Adrian Randlo

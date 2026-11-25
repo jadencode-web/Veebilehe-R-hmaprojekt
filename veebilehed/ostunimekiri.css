@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #f5f4f0;
+  --paper: #fff;
+  --ink: #252c27;
+  --muted: #626a64;
+  --green: #305442;
+  --green-dark: #294938;
+  --soft: #edf0ea;
+  --line: #dedfd8;
+  --shadow: none;
+  --radius: 7px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid #83b18b; outline-offset: 3px; }
+.rakendus { margin: 0 auto; min-height: 100vh; }
+.kulgmenu { gap: 8px; }
+.logo { display: flex; align-items: center; gap: 8px; }
+.menuulingid a { display: flex; align-items: center; gap: 13px; }
+.sisu { min-width: 0; }
+.lehe-pealkiri { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.lehe-pealkiri h1 { margin: 0; line-height: 1.13; }
+.kirjeldus { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+.tekst-nupp { color: var(--green); font-size: 13px; white-space: nowrap; }
+.tekst-nupp:hover { text-decoration: underline; }
+.nadalakokkuvote { display: flex; align-items: center; }
+.statistika { display: flex; align-items: center; border-left: 1px solid var(--line); }
+.statistika strong, .statistika small { display: block; white-space: nowrap; }
+.statistika small { color: var(--muted); }
+.nupp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  border: 0;
+}
+.nupp-tume { background: var(--green); color: white; margin-left: auto; white-space: nowrap; }
+.nupp-tume:hover { background: var(--green-dark); }
+.nupp-hele { background: var(--soft); color: var(--green); }
+.ylakiri { margin: 0 0 7px; }
+@media (max-width: 700px) {
+  .lehe-pealkiri { display: block; }
+  .lehe-pealkiri .tekst-nupp { display: none; }
+  .statistika { border: 0; }
+  .nupp-tume { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; }
+}
+
+/* Ostunimekirja paigutus */
+.osturakendus {
+  grid-template-columns: clamp(170px, 14vw, 218px) minmax(0, 1fr);
+}
+
+.osturakendus .sisu {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.ostu-nadal {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.ostukokkuvote .nupp {
+  border: 0;
+}
+
+.ostukokkuvote .nupp:disabled {
+  background: var(--soft);
+  color: var(--muted);
+  cursor: default;
+}
+
+.ostuvaade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 330px);
+  align-items: start;
+  gap: 18px;
+}
+
+.ostuvaade:has(#ostu-menuu[hidden]) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.ostukaart {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.ostukaardi-pais {
+  padding: 19px 21px;
+}
+
+.ostukaardi-pais h2 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -.5px;
+}
+
+.ostukaardi-pais p,
+.ostu-tyhi p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.ostuloend {
+  margin: 0;
+  padding: 0 21px 12px;
+  list-style: none;
+}
+
+.osturida {
+  border-top: 1px solid var(--line);
+}
+
+.osturida label {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 51px;
+  cursor: pointer;
+}
+
+.osturida input {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+
+.osturida span {
+  overflow-wrap: anywhere;
+}
+
+.osturida strong {
+  padding: 4px 9px;
+  border-radius: 8px;
+  background: var(--soft);
+  color: var(--green-dark);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.osturida input:checked + span {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.ostu-paev {
+  margin: 0 21px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.ostu-paev:last-child {
+  margin-bottom: 7px;
+}
+
+.ostu-paev h3 {
+  margin: 0 0 7px;
+  color: var(--green-dark);
+  font-size: 13px;
+}
+
+.ostu-paev ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ostu-paev li {
+  font-size: 13px;
+}
+
+.ostu-paev li span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.ostu-tyhi {
+  padding: 13px 18px 30px;
+  text-align: center;
+}
+
+.ostu-tyhi h3 {
+  margin: 12px 0 0;
+  font-size: 16px;
+}
+
+.ostu-tyhi .info-ikoon {
+  margin-inline: auto;
+}
+
+.ostu-tyhi .nupp {
+  margin: 15px 0 0;
+}
+
+@media (max-width: 920px) {
+  .ostuvaade {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .ostukokkuvote .ostu-nadal {
+    flex: 1 0 100%;
+  }
+
+  .ostukokkuvote .nupp {
+    flex: 1 0 100%;
+  }
+
+  .ostukaardi-pais {
+    padding: 16px;
+  }
+
+  .ostuloend {
+    padding-inline: 16px;
+  }
+
+  .ostu-paev {
+    margin-inline: 16px;
+  }
+}
+
+
+/* Ostukorvi arvutus */
+[hidden] { display: none !important; }
+.portsjonivalik, .arvutuse-valikud {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+.portsjonivalik label, .arvutuse-valikud label { font-weight: 700; }
+.portsjonivalik span { color: var(--muted); font-size: 12px; }
+.portsjonivalik input, .arvutuse-valikud input, .arvutuse-valikud select {
+  padding: 9px 10px;
+  border: 1px solid #becdb6;
+  background: var(--paper);
+  border-radius: 9px;
+  color: var(--ink);
+  font: inherit;
+}
+.portsjonivalik input, .arvutuse-valikud input { width: 72px; }
+.arvutuse-valikud label { display: flex; align-items: center; gap: 9px; }
+.arvutuse-valikud button { border: 0; margin-left: auto; }
+.arvutuse-valikud select { max-width: 100%; }
+.ostusoovitus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--green-dark);
+  color: white;
+  padding: 24px;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+}
+.ostusoovitus h2 { margin: 0; font-size: 25px; letter-spacing: -.6px; }
+.ostusoovitus p { font-size: 13px; margin-bottom: 0; }
+.ostusoovitus .ylakiri { color: #c9dab4; margin: 0 0 6px; font-size: 10px; }
+.ostuhind { display: grid; text-align: right; gap: 3px; }
+.ostuhind strong { font-size: 35px; line-height: 1.2; color: #e0ecc4; white-space: nowrap; }
+.ostuhind span, .ostuhind small { font-size: 12px; color: #e1ebd8; }
+.ostu-kulg { display: grid; align-items: start; gap: 18px; min-width: 0; }
+.poevariandid { list-style: none; margin: 0; padding: 0 16px 10px; }
+.poevariant {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 8px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+}
+.poevariant strong { white-space: nowrap; }
+.poevariant small { display: block; color: var(--muted); font-size: 11px; margin-top: 3px; }
+.soovitatud-variant { background: var(--soft); border-radius: 8px; }
+.hindade-info { padding: 0 22px 17px; color: var(--muted); font-size: 11px; }
+.hindade-info summary { cursor: pointer; }
+#hinnainfo { white-space: pre-line; line-height: 1.8; }
+.hinnaga-rida { padding-bottom: 10px; }
+.osturea-nimi small { display: block; margin-top: 2px; color: var(--muted); font-size: 11px; }
+.osturea-detail { margin-left: 29px; color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+.osturea-detail span { display: block; font-size: 11px; margin-top: 4px; }
+.osturea-detail a { color: var(--green); }
+.osturea-detail a:hover { text-decoration: underline; }
+.ostuloend .osturida input:checked + .osturea-nimi { text-decoration: line-through; }
+.puuduvad-tooted, .laadimisviga {
+  padding: 14px 17px;
+  margin: 0 0 20px;
+  border: 1px solid #d9bc7f;
+  border-radius: 12px;
+  background: #fbf3df;
+  color: #674713;
+  font-size: 13px;
+}
+.arvutuse-teade { font-size: 14px; color: var(--muted); }
+.nupp:disabled { cursor: default; opacity: .6; }
+@media (max-width: 700px) {
+  .ostusoovitus { align-items: flex-start; flex-direction: column; padding: 20px; }
+  .ostuhind { text-align: left; }
+  .arvutuse-valikud { align-items: stretch; flex-direction: column; }
+  .arvutuse-valikud label { justify-content: space-between; flex-wrap: wrap; }
+  .arvutuse-valikud button { margin: 0; }
+}
+@media print {
+  body { background: white; color: black; font-size: 11px; }
+  .rakendus { display: block; }
+  .kulgmenu, .tekst-nupp, .ostukokkuvote .nupp, .arvutuse-valikud, #proovi-uuesti, .ostu-kulg { display: none !important; }
+  .sisu { padding: 0; }
+  .ostuvaade { display: block; }
+  .ostukaart, .nadalakokkuvote { box-shadow: none; }
+  .ostusoovitus { background: white; color: black; border: 1px solid #ccc; }
+  .ostusoovitus .ylakiri, .ostuhind strong, .ostuhind span, .ostuhind small { color: black; }
+  .osturida { break-inside: avoid; }
+}
+
+/* Ostunimekirja kujundus */
+.osturakendus {
+  --bg: #f5f4f0;
+  --paper: #fff;
+  --ink: #252c27;
+  --muted: #626a64;
+  --green: #305442;
+  --green-dark: #294938;
+  --soft: #edf0ea;
+  --line: #dedfd8;
+  --shadow: none;
+  --radius: 7px;
+  display: block;
+  max-width: none;
+  background: var(--bg);
+  min-height: 100vh;
+}
+.osturakendus .kulgmenu {
+  position: static;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 0 max(28px, calc((100% - 1180px) / 2));
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+.osturakendus .logo {
+  padding: 0;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -.5px;
+  white-space: nowrap;
+}
+.osturakendus .menuulingid {
+  display: flex;
+  gap: 26px;
+  overflow: visible;
+  margin: 0;
+}
+.osturakendus .menuulingid a {
+  min-height: 74px;
+  padding: 23px 0 20px;
+  border-radius: 0;
+  border-bottom: 3px solid transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  background: transparent;
+}
+.osturakendus .menuulingid a:hover {
+  color: var(--ink);
+  background: transparent;
+}
+.osturakendus .menuulingid .aktiivne {
+  color: var(--ink);
+  border-bottom-color: var(--green);
+  font-weight: 700;
+  background: transparent;
+}
+.osturakendus .sisu {
+  width: min(1180px, calc(100% - 56px));
+  max-width: none;
+  margin-inline: auto;
+  padding: 40px 0 56px;
+}
+.osturakendus .lehe-pealkiri {
+  margin-bottom: 26px;
+}
+.osturakendus .lehe-pealkiri h1 {
+  font-size: clamp(29px, 3vw, 36px);
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+.osturakendus .kirjeldus { margin-top: 10px; }
+.osturakendus .tekst-nupp { font-weight: 500; }
+.osturakendus .nadalakokkuvote {
+  gap: 26px;
+  flex-wrap: wrap;
+  padding: 17px 0;
+  margin-bottom: 22px;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+}
+.osturakendus .statistika {
+  min-width: 130px;
+  padding-left: 24px;
+  gap: 0;
+}
+.osturakendus .ostu-nadal { padding-left: 0; }
+.osturakendus .statistika strong { font-size: 14px; font-weight: 600; }
+.osturakendus .statistika small { font-size: 12px; margin-top: 4px; }
+.osturakendus .nupp {
+  border-radius: 5px;
+  min-height: 40px;
+  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.osturakendus .arvutuse-valikud { gap: 20px; margin-bottom: 24px; }
+.osturakendus .arvutuse-valikud label { font-size: 12px; font-weight: 500; }
+.osturakendus .arvutuse-valikud input,
+.osturakendus .arvutuse-valikud select {
+  border-color: #c9cec6;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 8px 10px;
+}
+.osturakendus .arvutuse-valikud .nupp {
+  background: transparent;
+  border: 1px solid #c9cec6;
+  color: var(--ink);
+}
+.osturakendus .ostusoovitus {
+  padding: 24px 26px;
+  margin-bottom: 24px;
+  border: 1px solid #d3d9cb;
+  border-left: 4px solid #456344;
+  border-radius: 5px;
+  background: #eef1e8;
+  color: var(--ink);
+}
+.osturakendus .ostusoovitus .ylakiri {
+  color: #58634f;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+}
+.osturakendus .ostusoovitus h2 { font-size: 24px; font-weight: 600; }
+.osturakendus .ostusoovitus p { font-size: 12px; }
+.osturakendus .ostuhind strong {
+  color: var(--ink);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+}
+.osturakendus .ostuhind span,
+.osturakendus .ostuhind small { color: #58634f; }
+.osturakendus .ostuhind small { font-size: 11px; }
+.osturakendus .ostuvaade { gap: 24px; grid-template-columns: minmax(0, 1fr) 330px; }
+.osturakendus .ostuvaade:has(#ostu-menuu[hidden]) { grid-template-columns: minmax(0, 1fr); }
+.osturakendus .ostukaart { box-shadow: none; border-color: var(--line); border-radius: 7px; }
+.osturakendus .ostukaardi-pais { padding: 22px 24px 18px; }
+.osturakendus .ostukaardi-pais h2 { font-size: 17px; font-weight: 600; letter-spacing: -.3px; }
+.osturakendus .ostukaardi-pais p { font-size: 12px; line-height: 1.6; }
+.osturakendus .ostuloend { padding: 0 24px 8px; }
+.osturakendus .hinnaga-rida { padding-block: 6px 14px; }
+.osturakendus .osturida label { min-height: 47px; gap: 12px; }
+.osturakendus .osturida input { accent-color: var(--green); }
+.osturakendus .osturea-nimi { font-size: 14px; }
+.osturakendus .osturea-nimi small { margin-top: 4px; font-size: 11px; }
+.osturakendus .osturida strong {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.osturakendus .osturea-detail { line-height: 1.6; margin-left: 29px; font-size: 12px; }
+.osturakendus .osturea-detail a { color: #4c6352; text-decoration: underline; text-decoration-color: #c4cec4; text-underline-offset: 3px; }
+.osturakendus .osturea-detail span { font-size: 11px; }
+.osturakendus .ostu-kulg { gap: 20px; }
+.osturakendus .poevariandid { padding: 0 16px 12px; }
+.osturakendus .poevariant { font-size: 12px; padding: 11px 8px; }
+.osturakendus .poevariant strong { font-weight: 600; font-variant-numeric: tabular-nums; }
+.osturakendus .soovitatud-variant { border-radius: 3px; background: #eef1e8; }
+.osturakendus .hindade-info { font-size: 11px; }
+.osturakendus .ostu-paev { margin-inline: 24px; }
+.osturakendus .ostu-paev h3 { color: var(--ink); font-weight: 600; }
+.osturakendus .puuduvad-tooted,
+.osturakendus .laadimisviga { border-radius: 5px; }
+.osturakendus .ostu-tyhi { padding-block: 28px 44px; }
+@media (max-width: 900px) {
+  .osturakendus .ostuvaade { grid-template-columns: minmax(0, 1fr); }
+  .osturakendus .ostu-kulg { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .osturakendus .arvutuse-valikud .nupp { margin-left: 0; }
+}
+@media (max-width: 600px) {
+  .osturakendus .kulgmenu {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 19px 20px 0;
+    gap: 10px;
+  }
+  .osturakendus .logo { font-size: 18px; }
+  .osturakendus .menuulingid { width: 100%; gap: 24px; }
+  .osturakendus .menuulingid a { min-height: 45px; padding-block: 11px; font-size: 12px; }
+  .osturakendus .sisu { width: calc(100% - 40px); padding-block: 28px 40px; }
+  .osturakendus .nadalakokkuvote { gap: 20px; padding-block: 16px; }
+  .osturakendus .statistika { min-width: 0; padding-left: 0; flex: 1; }
+  .osturakendus .ostu-nadal { flex: 1 0 100%; }
+  .osturakendus .ostukokkuvote .nupp { flex: 1 0 100%; }
+  .osturakendus .arvutuse-valikud { gap: 13px; }
+  .osturakendus .arvutuse-valikud label { gap: 12px; }
+  .osturakendus .ostusoovitus { gap: 20px; padding: 20px; }
+  .osturakendus .ostuhind strong { font-size: 30px; }
+  .osturakendus .ostukaardi-pais { padding: 20px 17px 16px; }
+  .osturakendus .ostuloend { padding-inline: 17px; }
+  .osturakendus .ostu-kulg { grid-template-columns: minmax(0, 1fr); }
+  .osturakendus .ostu-paev { margin-inline: 17px; }
+}
+@media print {
+  .osturakendus .kulgmenu { display: none; }
+  .osturakendus .sisu { width: 100%; padding: 0; }
+  .osturakendus .ostuvaade { display: block; }
+  .osturakendus .ostusoovitus { background: white; border: 1px solid #ccc; }
+}
