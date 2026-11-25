@@ -1,5 +1,5 @@
 # RIMI SCRAPER
-# Tegi: Jaden Ordašokov (koostatud Claude'i abiga, kood läbi loetud)
+# Tegi: Jaden Ordašokov
 #
 # Mida see teeb:
 #   1. Loeb failist andmed/tooted/tooted_rimi.json meie valitud Rimi tooted (nimi, link, pakendi suurus).

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # OSTUNIMEKIRI_FAIL.PY  (Pythoni backend, töötab serveris)
-# Tegi: tiim (koostatud Claude'i abiga, kood läbi loetud)
+# Tegi: SoodneKorvi tiim
 #
 # Teeb ostunimekirjast ühe HTML-faili, mille saab telefoni alla laadida.
 # Fail töötab ilma internetita: avad selle telefonis ja saad poes tooteid linnukesega märkida.

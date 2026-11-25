@@ -1,5 +1,5 @@
 # SELVERI SCRAPER
-# Tegi: NIMI (koostatud Claude'i abiga, kood läbi loetud)
+# Tegi: NIMI
 #
 # Mida see teeb:
 #   1. Loeb failist andmed/tooted/tooted_selver.json meie valitud Selveri tooted (nimi, link, pakendi suurus).

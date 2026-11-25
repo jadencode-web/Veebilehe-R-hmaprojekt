@@ -1,5 +1,5 @@
 # MAXIMA SCRAPER
-# Tegi: NIMI (koostatud Claude'i abiga, kood läbi loetud)
+# Tegi: NIMI
 #
 # Mida see teeb:
 #   1. Loeb failist andmed/tooted/tooted_maxima.json meie valitud Maxima tooted (nimi, link, pakendi suurus).

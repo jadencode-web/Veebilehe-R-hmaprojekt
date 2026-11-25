@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # ARVUTA.PY  (Pythoni backend, töötab serveris)
-# Tegi: tiim (koostatud Claude'i abiga, kood läbi loetud)
+# Tegi: SoodneKorvi tiim
 #
 # Veebileht saadab siia kasutaja valitud retseptid ja portsjonid (POST, JSON).
 # See skript arvutab odavaima ostukorvi ja saadab tulemuse JSON-ina tagasi.

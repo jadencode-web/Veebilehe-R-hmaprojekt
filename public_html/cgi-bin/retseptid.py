@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # RETSEPTID.PY  (Pythoni backend, töötab serveris)
-# Tegi: tiim (koostatud Claude'i abiga, kood läbi loetud)
+# Tegi: SoodneKorvi tiim
 #
 # Saadab veebilehele kõigi retseptide nimekirja JSON-ina.
 # Kaust andmed/ ei ole veebis avalik, seepärast loeb leht retseptid selle skripti kaudu.

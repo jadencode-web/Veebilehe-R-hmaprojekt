@@ -1,7 +1,10 @@
 /* TOIDUPLAAN.JS – nädalaplaani lehe JavaScript.
    Joonistab kalendri (7 päeva x 3 toidukorda), laseb retsepte otsida, sorteerida, lisada ja eemaldada.
    Valikud salvestatakse brauserisse (vt uhine.js loePlaan ja salvestaPlaan).
-   Autor: SoodneKorvi tiim. Allikas: kirjutatud Claude'i (Anthropic) abiga, tiim on koodi läbi lugenud ja testinud.
+   Autor: SoodneKorvi tiim.
+   Allikad: MDN Web Docs – sündmuste delegeerimine (https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling),
+   Element.closest (https://developer.mozilla.org/en-US/docs/Web/API/Element/closest),
+   Array.prototype.filter (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter).
    Kasutab faili uhine.js konstante ja funktsioone. */
 
 // Sorteerimise nupud. "kontroll" on funktsioon, mis ütleb, kas retsept sobib selle nupuga.

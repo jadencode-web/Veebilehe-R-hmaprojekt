@@ -75,4 +75,4 @@ python3 scraperid/maxima.py
 - Toidufotod: Wikimedia Commons, Pixabay ja Pexels, iga foto autor ja litsents on avalehel jaotises "Fotode autorid".
 - Font: DM Sans, Google Fonts (SIL Open Font License).
 - Logo ja ikoonid: tiimi oma, joonistatud SVG-na.
-- JavaScript ja Python on kirjutatud Claude'i (Anthropic) abiga, iga faili alguses on viide. Pythonis ei ole kasutatud ühtegi raamistikku.
+- JavaScripti allikad (MDN Web Docs) on iga JS-faili alguses. Pythonis ei ole kasutatud ühtegi raamistikku, ainult standardteeki.

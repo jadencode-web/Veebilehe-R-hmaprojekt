@@ -1,5 +1,5 @@
 /* UHINE.JS – funktsioonid, mida kasutavad kõik kolm lehte.
-   Autor: SoodneKorvi tiim. Allikas: kirjutatud Claude'i (Anthropic) abiga, tiim on koodi läbi lugenud ja testinud.
+   Autor: SoodneKorvi tiim.
    Brauseri funktsioonide kohta on kasutatud MDN Web Docs dokumentatsiooni (https://developer.mozilla.org/). */
 
 // Nädalapäevad ja toidukorrad. "id" on sama, mis retseptid.json failis "toidukord" väärtus.
