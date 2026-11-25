@@ -28,7 +28,20 @@ import json                       # JSON-failide lugemiseks
 import math                       # math.ceil ümardab üles: 1.2 -> 2 (pooli pakke osta ei saa)
 from pathlib import Path          # failide asukohtade jaoks
 
-ANDMED = Path(__file__).resolve().parents[2] / "andmed"   # projekti kaust "andmed" (public_html/cgi-bin -> kaks taset üles)
+SIIN = Path(__file__).resolve().parent                    # kaust public_html/cgi-bin
+
+
+def leia_andmed():
+    # Otsib kausta "andmed" kolmest kohast, sest serveris võib see olla pandud eri kohta:
+    # 1) kodukaustas (~/andmed), 2) public_html sees (~/public_html/andmed), 3) cgi-bin sees.
+    kohad = [SIIN.parent.parent / "andmed", SIIN.parent / "andmed", SIIN / "andmed"]
+    for koht in kohad:
+        if (koht / "retseptid.json").exists():
+            return koht
+    return kohad[0]
+
+
+ANDMED = leia_andmed()                                    # näiteks /home/reevo/andmed
 POED = ["rimi", "selver", "maxima"]                 # hinnafailide nimed: hinnad_rimi.json jne
 
 
@@ -322,9 +335,9 @@ def trüki_ostunimekiri(tulemus):
 def vasta(andmed):
     # Saadab JSON-vastuse brauserile. CGI-s läheb kõik, mis prinditakse, otse brauserisse.
     # andmed = näiteks leia_odavaim() tulemus või {"viga": "..."}
-    print("Content-Type: application/json; charset=utf-8")
-    print()
-    print(json.dumps(andmed, ensure_ascii=False))
+    # Saadame UTF-8 baitidena, et täpitähed (õ, ä, ö, ü) töötaksid igas serveris.
+    tekst = "Content-Type: application/json; charset=utf-8\r\n\r\n" + json.dumps(andmed, ensure_ascii=False)
+    sys.stdout.buffer.write(tekst.encode("utf-8"))
 
 
 def vasta_päringule():

@@ -205,16 +205,13 @@ def vasta_päringule():
             raise ValueError("Hinnafaile ei leitud")
         tulemus = arvuta.võrdle_poode(sisend["valikud"])
         fail = tee_fail(sisend, tulemus)
-        print("Content-Type: text/html; charset=utf-8")
-        print('Content-Disposition: attachment; filename="soodnekorv-ostunimekiri.html"')
-        print()
-        sys.stdout.flush()
+        päis = "Content-Type: text/html; charset=utf-8\r\n"
+        päis = päis + 'Content-Disposition: attachment; filename="soodnekorv-ostunimekiri.html"\r\n\r\n'
+        sys.stdout.buffer.write(päis.encode("utf-8"))
         sys.stdout.buffer.write(fail.encode("utf-8"))
     except Exception as viga:
-        print("Status: 500")
-        print("Content-Type: text/plain; charset=utf-8")
-        print()
-        print("Viga: " + str(viga))
+        tekst = "Status: 500 Internal Server Error\r\nContent-Type: text/plain; charset=utf-8\r\n\r\nViga: " + str(viga)
+        sys.stdout.buffer.write(tekst.encode("utf-8"))
 
 
 def proovi_terminalis():
