@@ -1,6 +1,6 @@
 {
  "pood": "Rimi",
- "kogutud": "2026-11-18T17:55:00",
+ "kogutud": "2026-11-25T15:39:17",
  "tooted": [
   {
    "id": "kartul",
@@ -8,7 +8,7 @@
    "link": "https://www.rimi.ee/epood/ee/tooted/puuviljad-koogiviljad-lilled/juurviljad-ja-koogiviljad/kartul/kartul-pesemata-kg-eesti/p/276039",
    "kogus": 1000,
    "kaalukaup": true,
-   "hind": 0.41
+   "hind": 0.39
   },
   {
    "id": "sibul",
@@ -16,7 +16,7 @@
    "link": "https://www.rimi.ee/epood/ee/tooted/puuviljad-koogiviljad-lilled/juurviljad-ja-koogiviljad/sibulkoogiviljad/sibul-50-70-mm-kg/p/278770",
    "kogus": 1000,
    "kaalukaup": true,
-   "hind": 0.46
+   "hind": 0.45
   },
   {
    "id": "porgand",
@@ -24,7 +24,7 @@
    "link": "https://www.rimi.ee/epood/ee/tooted/puuviljad-koogiviljad-lilled/juurviljad-ja-koogiviljad/porgand/porgand-pestud-kg-eesti/p/276076",
    "kogus": 1000,
    "kaalukaup": true,
-   "hind": 0.43
+   "hind": 0.45
   },
   {
    "id": "kapsas",
@@ -96,15 +96,7 @@
    "link": "https://www.rimi.ee/epood/ee/tooted/puuviljad-koogiviljad-lilled/juurviljad-ja-koogiviljad/kapsas/brokoli-rimi-350g/p/978280",
    "kogus": 350,
    "kaalukaup": false,
-   "hind": 1.79
-  },
-  {
-   "id": "lillkapsas",
-   "nimi": "Lillkapsas kg",
-   "link": "https://www.rimi.ee/epood/ee/tooted/puuviljad-koogiviljad-lilled/juurviljad-ja-koogiviljad/kapsas/lillkapsas-kg/p/200833",
-   "kogus": 1000,
-   "kaalukaup": true,
-   "hind": 2.99
+   "hind": 1.29
   },
   {
    "id": "küüslauk",
@@ -136,7 +128,7 @@
    "link": "https://www.rimi.ee/epood/ee/tooted/puuviljad-koogiviljad-lilled/puuviljad/oun-ja-pirn/oun-champion-1kl-kg/p/269163",
    "kogus": 1000,
    "kaalukaup": true,
-   "hind": 0.59
+   "hind": 0.57
   },
   {
    "id": "banaan",
@@ -392,7 +384,7 @@
    "link": "https://www.rimi.ee/epood/ee/tooted/kauasailivad-toidukaubad/jahu-ja-jahusegud/nisujahu/nisujahu-rimi-smart-tuup-812-2kg/p/816162",
    "kogus": 2000,
    "kaalukaup": false,
-   "hind": 0.63
+   "hind": 0.64
   },
   {
    "id": "odrakruubid",

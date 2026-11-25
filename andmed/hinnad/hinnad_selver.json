@@ -1,6 +1,6 @@
 {
  "pood": "Selver",
- "kogutud": "2026-11-18T17:55:00",
+ "kogutud": "2026-11-25T15:40:40",
  "tooted": [
   {
    "id": "kartul",
@@ -17,14 +17,6 @@
    "kogus": 1000,
    "kaalukaup": true,
    "hind": 0.39
-  },
-  {
-   "id": "porgand",
-   "nimi": "Porgand pestud, kg",
-   "link": "https://www.selver.ee/porgand-pestud-kg",
-   "kogus": 1000,
-   "kaalukaup": true,
-   "hind": 0.49
   },
   {
    "id": "kapsas",
@@ -56,7 +48,7 @@
    "link": "https://www.selver.ee/kurk-luunja-grune-fee-kg",
    "kogus": 1000,
    "kaalukaup": true,
-   "hind": 3.99
+   "hind": 4.69
   },
   {
    "id": "tomat",
@@ -64,7 +56,7 @@
    "link": "https://www.selver.ee/tomat-kg",
    "kogus": 1000,
    "kaalukaup": true,
-   "hind": 1.79
+   "hind": 0.99
   },
   {
    "id": "paprika",
@@ -96,7 +88,7 @@
    "link": "https://www.selver.ee/lillkapsas-kg",
    "kogus": 1000,
    "kaalukaup": true,
-   "hind": 3.49
+   "hind": 3.39
   },
   {
    "id": "küüslauk",
@@ -104,7 +96,7 @@
    "link": "https://www.selver.ee/kuuslauk-kg",
    "kogus": 1000,
    "kaalukaup": true,
-   "hind": 5.39
+   "hind": 4.99
   },
   {
    "id": "till",
@@ -112,7 +104,7 @@
    "link": "https://www.selver.ee/till-taldrikul-grune-fee-25-g",
    "kogus": 25,
    "kaalukaup": false,
-   "hind": 1.59
+   "hind": 1.79
   },
   {
    "id": "šampinjonid",
@@ -195,14 +187,6 @@
    "hind": 5.99
   },
   {
-   "id": "peekon",
-   "nimi": "Peekon, MAKS&MOORITS, 100 g",
-   "link": "https://www.selver.ee/peekon-maks-moorits-100-g",
-   "kogus": 100,
-   "kaalukaup": false,
-   "hind": 2.39
-  },
-  {
    "id": "viiner",
    "nimi": "Koduviiner, MAKS&MOORITS, 500 g",
    "link": "https://www.selver.ee/koduviiner-maks-moorits-500-g",
@@ -217,14 +201,6 @@
    "kogus": 250,
    "kaalukaup": false,
    "hind": 8.53
-  },
-  {
-   "id": "räimefilee",
-   "nimi": "Räim kuumsuitsu, kg",
-   "link": "https://www.selver.ee/raim-kuumsuitsu-kg",
-   "kogus": 1000,
-   "kaalukaup": true,
-   "hind": 8.99
   },
   {
    "id": "kilu",
@@ -347,14 +323,6 @@
    "hind": 2.69
   },
   {
-   "id": "tatar",
-   "nimi": "Tatar, SELVER, 1kg",
-   "link": "https://www.selver.ee/tatar-selver-1kg",
-   "kogus": 1000,
-   "kaalukaup": false,
-   "hind": 0.93
-  },
-  {
    "id": "kaerahelbed",
    "nimi": "Täistera jämedad kaerahelbed, TARTU MILL, 500 g",
    "link": "https://www.selver.ee/taistera-jamedad-kaerahelbed-tartu-mill-500-g",
@@ -472,7 +440,7 @@
    "link": "https://www.selver.ee/hapukurk-peipsi-pakitud-germani-talu-400-g",
    "kogus": 400,
    "kaalukaup": false,
-   "hind": 2.99
+   "hind": 3.45
   }
  ]
 }

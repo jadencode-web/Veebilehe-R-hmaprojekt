@@ -1,6 +1,6 @@
 {
  "pood": "Maxima",
- "kogutud": "2026-11-18T17:55:00",
+ "kogutud": "2026-11-25T15:42:13",
  "tooted": [
   {
    "id": "kartul",
@@ -24,7 +24,7 @@
    "link": "https://barbora.ee/p/porgand-lahtine-kg",
    "kogus": 1000,
    "kaalukaup": true,
-   "hind": 0.46
+   "hind": 0.33
   },
   {
    "id": "kapsas",
@@ -40,7 +40,7 @@
    "link": "https://barbora.ee/p/hapukapsas-pakitud-kadarbiku-900-g",
    "kogus": 900,
    "kaalukaup": false,
-   "hind": 1.69
+   "hind": 2.45
   },
   {
    "id": "peet",
@@ -56,7 +56,7 @@
    "link": "https://barbora.ee/p/kurk-pikk-kiles-kg",
    "kogus": 1000,
    "kaalukaup": true,
-   "hind": 2.69
+   "hind": 3.95
   },
   {
    "id": "tomat",
@@ -80,7 +80,7 @@
    "link": "https://barbora.ee/p/suvikorvits-roheline-kg",
    "kogus": 1000,
    "kaalukaup": true,
-   "hind": 1.95
+   "hind": 2.69
   },
   {
    "id": "kõrvits",
@@ -89,14 +89,6 @@
    "kogus": 1000,
    "kaalukaup": true,
    "hind": 1.19
-  },
-  {
-   "id": "brokoli",
-   "nimi": "Brokoli, 400g",
-   "link": "https://barbora.ee/p/brokoli-400-g-80901",
-   "kogus": 400,
-   "kaalukaup": false,
-   "hind": 1.69
   },
   {
    "id": "lillkapsas",
@@ -171,14 +163,6 @@
    "hind": 4.39
   },
   {
-   "id": "kanafilee",
-   "nimi": "Br.rinnafilee A-klass WELL DONE,500g",
-   "link": "https://barbora.ee/p/broileri-rinnafilee-well-done-500-g",
-   "kogus": 500,
-   "kaalukaup": false,
-   "hind": 2.99
-  },
-  {
    "id": "kanakoivad",
    "nimi": "Br.poolkoivad WELL DONE ABta,500g",
    "link": "https://barbora.ee/p/br-poolkoivad-well-done-abta-500-g",
@@ -224,7 +208,7 @@
    "link": "https://barbora.ee/p/lohefilee-240-g",
    "kogus": 240,
    "kaalukaup": false,
-   "hind": 3.99
+   "hind": 2.99
   },
   {
    "id": "valge_kala",
@@ -256,7 +240,7 @@
    "link": "https://barbora.ee/p/orrekanade-munad-m-extra-line-10-tk",
    "kogus": 10,
    "kaalukaup": false,
-   "hind": 1.99
+   "hind": 2.09
   },
   {
    "id": "piim",
@@ -288,7 +272,7 @@
    "link": "https://barbora.ee/p/prot-kohupiim-maits-tatere-fit-l-v-400-g",
    "kogus": 400,
    "kaalukaup": false,
-   "hind": 1.99
+   "hind": 1.49
   },
   {
    "id": "jogurt",
@@ -312,7 +296,7 @@
    "link": "https://barbora.ee/p/voi-alma-82-proc-200-g",
    "kogus": 200,
    "kaalukaup": false,
-   "hind": 2.49
+   "hind": 2.09
   },
   {
    "id": "rukkileib",
@@ -384,7 +368,7 @@
    "link": "https://barbora.ee/p/eesti-nisujahu-k-s-t-405-kalew-1-kg",
    "kogus": 1000,
    "kaalukaup": false,
-   "hind": 0.89
+   "hind": 1.25
   },
   {
    "id": "odrakruubid",
@@ -448,7 +432,7 @@
    "link": "https://barbora.ee/p/konserveeritud-mais-gold-bonduelle-170-g",
    "kogus": 170,
    "kaalukaup": false,
-   "hind": 1.59
+   "hind": 1.11
   },
   {
    "id": "õli",
