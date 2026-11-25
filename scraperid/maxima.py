@@ -1,5 +1,5 @@
 # MAXIMA SCRAPER
-# Tegi: NIMI
+# Tegi: Adrian Randlo
 # Kood on kirjutatud tehisintellekti Claude (Anthropic) abiga, tiim on koodi läbi vaadanud ja testinud.
 #
 # Mida see teeb:
