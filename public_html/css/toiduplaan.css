@@ -1,0 +1,218 @@
+/* Nädalaplaani (toiduplaan.html) stiilid. Ühised stiilid on failis uhine.css. */
+
+.tooriistariba { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.tooriistariba p { font-size: 14px; color: var(--hall); }
+.tooriistariba strong { color: var(--tekst); }
+
+/* ---------- Kalender: 1 pealkirjaveerg + 7 päeva, 1 pealkirjarida + 3 toidukorda ---------- */
+.kalendri-ala { overflow-x: auto; padding: 2px 2px 14px; }
+.kalender {
+  display: grid;
+  grid-template-columns: 100px repeat(7, minmax(104px, 1fr));
+  grid-template-rows: 58px repeat(3, 200px);
+  gap: 9px;
+  min-width: 880px;
+}
+.paev-pais, .rea-pealkiri { border-radius: var(--raadius-vaike); background: #e8f0e5; }
+.paev-pais { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.paev-pais strong { font-size: 16px; line-height: 1.2; }
+.paev-pais small { font-size: 12px; color: #567058; }
+.paev-pais.tana { background: var(--roheline); color: #fff; }
+.paev-pais.tana small { color: #d7e9d8; }
+.rea-pealkiri { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 8px; text-align: center; }
+.rea-pealkiri .ikoon { width: 26px; height: 26px; color: var(--roheline); }
+.rea-pealkiri strong { font-size: 13px; line-height: 1.3; }
+
+/* Tühi lahter */
+.lisa-kaart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  border: 1.5px dashed #bfd4bc;
+  border-radius: var(--raadius-vaike);
+  background: #f9fcf8;
+  color: var(--roheline-tume);
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.15s;
+}
+.lisa-kaart:hover { background: #ecf5eb; }
+.pluss-ring { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--roheline); color: #fff; }
+
+/* Valitud retsepti kaart */
+.toidukaart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 6px;
+  border: 1px solid var(--joon);
+  border-radius: var(--raadius-vaike);
+  background: var(--paber);
+  box-shadow: 0 3px 9px rgba(25, 55, 30, 0.05);
+}
+.toidukaart img { width: 100%; height: 96px; object-fit: cover; border-radius: 8px; background: var(--pehme); }
+.eemalda {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #46574b;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16);
+}
+.eemalda .ikoon { width: 16px; height: 16px; }
+.eemalda:hover { color: #a63838; }
+.kaardi-sisu { display: flex; flex-direction: column; flex: 1; padding: 8px 4px 2px; }
+.roog {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.kaardi-alumine { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-top: auto; }
+.aeg { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--hall); white-space: nowrap; }
+.aeg .ikoon { width: 14px; height: 14px; }
+.muuda { padding: 4px 2px; border: 0; background: none; color: var(--roheline); font-size: 12px; font-weight: 700; }
+.muuda:hover { text-decoration: underline; }
+
+.vihje { margin: 4px 0 26px; font-size: 13px; color: var(--hall); }
+
+.jargmine-samm { display: flex; align-items: center; gap: 16px; padding: 20px 24px; }
+.jargmine-samm h2 { font-size: 17px; margin-bottom: 2px; }
+.jargmine-samm p { font-size: 14px; color: var(--hall); }
+.jargmine-samm .tekst-link { margin-left: auto; }
+
+/* ---------- Retseptide paneel (paremal) ---------- */
+.retseptipaneel {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 36px 22px 24px;
+  background: #fcfdfb;
+  border-left: 1px solid var(--joon);
+}
+.paneeli-pais { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 18px; }
+.paneeli-pais h2 { font-size: 21px; letter-spacing: -0.5px; }
+.valitud-koht { margin-top: 6px; font-size: 13px; color: var(--hall); }
+.valitud-koht.aktiivne { color: var(--roheline); font-weight: 700; }
+.sulge-nupp {
+  display: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--pehme);
+  color: var(--tekst);
+  flex: none;
+}
+.otsing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 1px solid #d6e2d6;
+  border-radius: var(--raadius-vaike);
+  background: #fff;
+  color: var(--hall);
+}
+.otsing input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; font-size: 14px; color: var(--tekst); }
+.filtrid { display: flex; flex-wrap: wrap; gap: 7px; padding: 16px 0; }
+.filtrid button {
+  min-height: 34px;
+  padding: 0 13px;
+  border: 1px solid #d9e5d9;
+  border-radius: 99px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+.filtrid button:hover { border-color: var(--roheline); }
+.filtrid button.valitud { background: var(--roheline); border-color: var(--roheline); color: #fff; }
+.tulemuste-arv { font-size: 13px; color: var(--hall); margin-bottom: 4px; }
+
+.retseptirida { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--joon); }
+.retseptirida img { width: 62px; height: 62px; flex: none; object-fit: cover; border-radius: 10px; background: var(--pehme); }
+.retsepti-nupp { flex: 1; min-width: 0; padding: 0; border: 0; background: none; text-align: left; }
+.retsepti-nupp strong { display: block; font-size: 14px; line-height: 1.35; }
+.retsepti-nupp small { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 12px; color: var(--hall); }
+.retsepti-nupp small .ikoon { width: 13px; height: 13px; }
+.retsepti-nupp:hover strong { text-decoration: underline; }
+.lisa-nupp {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--pehme);
+  color: var(--roheline-tume);
+}
+.lisa-nupp:hover { background: #d6e8d4; }
+.retsepte-pole { padding: 28px 8px; text-align: center; font-size: 14px; color: var(--hall); }
+
+.paneeli-taust { display: none; }
+
+/* Keskmised ja väikesed ekraanid: paneel avaneb paremalt sahtlina */
+@media (max-width: 1550px) {
+  .retseptipaneel {
+    position: fixed;
+    z-index: 21;
+    top: 0;
+    right: 0;
+    width: min(420px, 92vw);
+    box-shadow: -16px 0 50px rgba(23, 56, 34, 0.16);
+    transform: translateX(110%);
+    transition: transform 0.25s ease;
+  }
+  .paneel-avatud .retseptipaneel { transform: translateX(0); }
+  .sulge-nupp { display: grid; }
+  .paneeli-taust {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    border: 0;
+    background: rgba(22, 45, 30, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+  }
+  .paneel-avatud .paneeli-taust { opacity: 1; visibility: visible; }
+}
+@media (min-width: 1551px) {
+  #sirvi-retsepte { display: none; }
+}
+@media (max-width: 760px) {
+  .kalendri-ala { margin-right: -16px; padding-right: 16px; }
+  .kalender { grid-template-columns: 96px repeat(7, 116px); grid-template-rows: 58px repeat(3, 190px); min-width: 0; }
+  .jargmine-samm { flex-direction: column; align-items: flex-start; }
+  .jargmine-samm .tekst-link { margin-left: 0; }
+}
+
+/* Kui retseptil pilti pole */
+.pilt-puudub { display: block; width: 62px; height: 62px; flex: none; border-radius: 10px; background: var(--pehme); }
+.toidukaart .pilt-puudub { width: 100%; height: 96px; border-radius: 8px; }
