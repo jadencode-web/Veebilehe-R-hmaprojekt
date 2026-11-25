@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nädalaplaani põhjal arvutatud ostunimekiri ja Rimi, Selveri ning Maxima hinnavõrdlus.">
+  <title>Ostunimekiri | SoodneKorv</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/uhine.css">
+  <link rel="stylesheet" href="css/ostunimekiri.css">
+  <script src="js/uhine.js" defer></script>
+  <script src="js/ostunimekiri.js" defer></script>
+</head>
+<body>
+  <div class="rakendus">
+    <aside class="kulgmenu" aria-label="Peamenüü">
+      <a class="logo" href="index.html"><img src="img/logo.svg" alt="" width="40" height="40"><span class="logo-nimi">Soodne<span>Korv</span></span></a>
+      <p class="logo-alatekst">Nädalamenüü soodsaima hinnaga</p>
+      <nav class="menuu" aria-label="Navigeerimine">
+        <a href="index.html"><svg class="ikoon" aria-hidden="true"><use href="img/ikoonid.svg#kodu"></use></svg>Avaleht</a>
+        <a href="toiduplaan.html"><svg class="ikoon" aria-hidden="true"><use href="img/ikoonid.svg#kalender"></use></svg>Nädalaplaan</a>
+        <a href="ostunimekiri.html" class="aktiivne" aria-current="page"><svg class="ikoon" aria-hidden="true"><use href="img/ikoonid.svg#nimekiri"></use></svg>Ostunimekiri</a>
+      </nav>
+      <div class="kulgmenu-jalus">Hinnad: Rimi, Selver ja Maxima<br><a href="index.html#fotod">Fotode autorid</a></div>
+    </aside>
+
+    <main class="sisu">
+      <header class="lehe-pealkiri">
+        <div>
+          <p class="ylakiri">Sinu nädala ostud</p>
+          <h1>Ostunimekiri</h1>
+          <p class="kirjeldus">Nädalaplaani retseptide koostisosad kokku liidetud ja võrreldud Rimi, Selveri ning Maxima hindadega.</p>
+        </div>
+        <a class="tekst-link" href="toiduplaan.html"><svg class="ikoon ikoon-vaike" aria-hidden="true"><use href="img/ikoonid.svg#nool-vasakule"></use></svg>Tagasi nädalaplaani</a>
+      </header>
+
+      <section class="kokkuvote kaart" aria-label="Ostunimekirja kokkuvõte">
+        <div class="statistika">
+          <span class="stat-ikoon"><svg class="ikoon" aria-hidden="true"><use href="img/ikoonid.svg#kalender"></use></svg></span>
+          <span><strong id="nadala-vahemik">See nädal</strong><small>nädalaplaan</small></span>
+        </div>
+        <div class="statistika">
+          <span class="stat-ikoon"><svg class="ikoon" aria-hidden="true"><use href="img/ikoonid.svg#kell"></use></svg></span>
+          <span><strong id="toidukordi">0</strong><small>valitud toidukorda</small></span>
+        </div>
+        <div class="statistika">
+          <span class="stat-ikoon"><svg class="ikoon" aria-hidden="true"><use href="img/ikoonid.svg#linnuke"></use></svg></span>
+          <span><strong id="margitud" role="status">0 / 0</strong><small>toodet ostetud</small></span>
+        </div>
+        <button class="nupp nupp-tume" type="button" id="laadi-alla" disabled><svg class="ikoon" aria-hidden="true"><use href="img/ikoonid.svg#nool-alla"></use></svg>Laadi nimekiri alla</button>
+      </section>
+
+      <section class="valikud kaart" id="valikud" aria-label="Ostukorvi valikud">
+        <label class="valiku-silt" for="portsjonid">Portsjonid toidukorra kohta
+          <input class="arvuvali" type="number" id="portsjonid" min="1" max="20" step="1" value="2">
+        </label>
+        <label class="valiku-silt" for="poode">Poodide arv
+          <select class="valik" id="poode">
+            <option value="1">Kõik ühest poest</option>
+            <option value="2">Kuni kaks poodi</option>
+          </select>
+        </label>
+        <button class="nupp nupp-hele" type="button" id="prindi" disabled><svg class="ikoon" aria-hidden="true"><use href="img/ikoonid.svg#prindi"></use></svg>Prindi või salvesta PDF</button>
+      </section>
+
+      <p class="olekuteade" id="olekuteade" role="status" hidden></p>
+      <button class="nupp nupp-hele proovi-uuesti" type="button" id="proovi-uuesti" hidden>Proovi uuesti</button>
+
+      <section class="soovitus" id="soovitus" aria-labelledby="soovitatud-poed" hidden>
+        <div>
+          <p class="ylakiri">Soodsaim ostukorv</p>
+          <h2 id="soovitatud-poed">–</h2>
+          <p id="saast"></p>
+        </div>
+        <div class="koguhind">
+          <strong id="koguhind">–</strong>
+          <span id="hinna-selgitus"></span>
+          <small id="hinnad-seisuga"></small>
+        </div>
+      </section>
+
+      <p class="teade" id="puudu" role="status" hidden></p>
+
+      <div class="ostuvaade">
+        <section class="ostukaart kaart" aria-labelledby="nimekirja-pealkiri">
+          <header class="ostukaardi-pais">
+            <h2 id="nimekirja-pealkiri">Mida osta</h2>
+            <p id="nimekirja-juhis">Märgi ostetud tooted linnukesega.</p>
+          </header>
+          <div class="tyhi" id="tyhi" hidden>
+            <span class="info-ikoon"><svg class="ikoon ikoon-suur" aria-hidden="true"><use href="img/ikoonid.svg#korv"></use></svg></span>
+            <h3>Ostunimekiri on tühi</h3>
+            <p>Lisa nädalaplaani vähemalt üks retsept. Siis arvutame siin, mida ja kust osta.</p>
+            <a class="nupp nupp-tume" href="toiduplaan.html">Ava nädalaplaan <svg class="ikoon" aria-hidden="true"><use href="img/ikoonid.svg#nool-paremale"></use></svg></a>
+          </div>
+          <div id="nimekiri"></div>
+        </section>
+
+        <div class="ostu-kulg">
+          <section class="ostukaart kaart" id="vordlus" aria-labelledby="vordluse-pealkiri" hidden>
+            <header class="ostukaardi-pais">
+              <h2 id="vordluse-pealkiri">Poodide võrdlus</h2>
+              <p>Kogu ostukorvi hind igas poes ja poepaaris.</p>
+            </header>
+            <ul class="poevariandid" id="poevariandid"></ul>
+          </section>
+          <section class="ostukaart kaart" id="menuu-kaart" aria-labelledby="menuu-pealkiri" hidden>
+            <header class="ostukaardi-pais">
+              <h2 id="menuu-pealkiri">Valitud toidukorrad</h2>
+              <p>Retseptid, millest nimekiri kokku pandi.</p>
+            </header>
+            <div id="menuu"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="teavitus" id="teavitus" role="status" aria-live="polite"></div>
+</body>
+</html>
