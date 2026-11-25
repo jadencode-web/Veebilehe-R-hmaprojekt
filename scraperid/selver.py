@@ -1,5 +1,5 @@
 # SELVERI SCRAPER
-# Tegi: NIMI
+# Tegi: Reevo Veelmaa
 # Kood on kirjutatud tehisintellekti Claude (Anthropic) abiga, tiim on koodi läbi vaadanud ja testinud.
 #
 # Mida see teeb:
