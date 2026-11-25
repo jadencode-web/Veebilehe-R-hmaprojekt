@@ -1,6 +1,8 @@
 /* INDEX.JS – avalehe JavaScript.
    Näitab, mitu toidukorda on nädalaplaani lisatud, ja koostab fotode autorite nimekirja.
-   Autor: SoodneKorvi tiim. Allikas: kirjutatud Claude'i (Anthropic) abiga, tiim on koodi läbi lugenud ja testinud.
+   Autor: SoodneKorvi tiim.
+   Allikad: MDN Web Docs – localStorage (https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage),
+   Array.prototype.map (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
    Kasutab faili uhine.js funktsioone (loePlaan, laeRetseptid, turvaline, nadalaVahemik). */
 
 // 1. Mitu toidukorda 21-st on valitud

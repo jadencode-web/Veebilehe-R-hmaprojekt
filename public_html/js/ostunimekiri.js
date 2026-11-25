@@ -1,7 +1,10 @@
 /* OSTUNIMEKIRI.JS – ostunimekirja lehe JavaScript.
    Saadab nädalaplaani retseptid serverisse (Pythoni skript cgi-bin/arvuta.py), mis arvutab
    iga poe ja poepaari hinna. Leht näitab soodsaimat ostukorvi, ostunimekirja ja poodide võrdlust.
-   Autor: SoodneKorvi tiim. Allikas: kirjutatud Claude'i (Anthropic) abiga, tiim on koodi läbi lugenud ja testinud.
+   Autor: SoodneKorvi tiim.
+   Allikad: MDN Web Docs – fetch (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch),
+   Intl.NumberFormat (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat),
+   Blob ja URL.createObjectURL (https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL_static).
    Kasutab faili uhine.js konstante ja funktsioone. */
 
 const plaan = loePlaan();                      // näiteks {valikud: {"0|hommik": "Plov"}, portsjonid: 2}
