@@ -1,5 +1,7 @@
 # Veebilehe-Ryhmaprojekt - Toidukordade planeerija ja ostukorvi hinnavõrdlus
 
+**SoodneKorv** · Veebileht: LINK TULEB
+
 ## Projekti tutvustus
 
 Meie rühmatöö eesmärk on luua veebileht, mis aitab kasutajal planeerida oma nädala toidukordi ning leida valitud toitude valmistamiseks vajalikud toiduained võimalikult soodsa hinnaga.
@@ -30,12 +32,12 @@ Valitud toidukordade põhjal koostatakse vajalike toiduainete ja koguste nimekir
 
 Kolmandal lehel kuvatakse kasutaja nädalamenüü põhjal koostatud ostunimekiri ning võrreldakse vajalike toodete hindu erinevates toidupoodides.
 
-Planeeritud on võrrelda kolme kaupluse hindu:
+Võrdleme kolme kaupluse hindu:
 - Maxima
 - Selver
 - Rimi
 
-Veebirakenduse eesmärk on koguda toodete hinnainfot kaupluste veebilehtedelt ning arvutada, millises poes oleks ostude tegemine kõige soodsam.
+Toodete hinnad kogutakse kaupluste veebilehtedelt Pythoni scraperitega ning server arvutab Pythoniga, millises poes on ostude tegemine kõige soodsam.
 
 Võrdluses arvestatakse nii kogu ostunimekirja maksumust ühes kaupluses kui ka võimalust jagada ostud mitme kaupluse vahel.
 
@@ -46,7 +48,7 @@ Kasutajale kuvatakse:
 - Ostunimekirja kogumaksumus.
 - Erinevate ostuvõimaluste hinnavõrdlus.
 
-Lisaks on kasutajal võimalus laadida koostatud ostunimekiri koos hindade ja kogustega alla PDF-failina.
+Lisaks saab kasutaja ostunimekirja printida või PDF-ina salvestada ning alla laadida telefoni, kus saab ostetud tooteid linnukesega märkida ka ilma internetita.
 
 ## Projekti eesmärk
 
@@ -75,3 +77,30 @@ Kasutame GitHubi projekti failide haldamiseks ja muudatuste salvestamiseks. Iga 
 - Jaden Ordašokov
 - Reevo Veelmaa
 - Adrian Randlo
+
+## Tööjaotus
+
+Alguses jagasime töö nii, et igaüks tegi ühe scraperi ja ühe lehe:
+
+| Rühmaliige | Scraper | Leht |
+|---|---|---|
+| Jaden Ordašokov | Rimi | Nädalaplaan |
+| Reevo Veelmaa | Selver | Ostunimekiri |
+| Adrian Randlo | Maxima | Avaleht |
+
+Pärast seda tegime kõike koos: valisime ühise disaini, retseptid, pildid ja tooted, mida scrapida, ning panime projekti kokku. Töötasime samas ruumis ja arutasime kõik otsused koos läbi, seega panustasid kõik rühmaliikmed võrdselt.
+
+## Tehniline ülevaade
+
+- `public_html/` – veebileht: kolm HTML-lehte, ühine CSS (`css/uhine.css`) ja iga lehe oma CSS ning JavaScript.
+- `public_html/cgi-bin/` – Pythoni backend (ilma raamistiketa): `arvuta.py` arvutab odavaima ostukorvi, `ostunimekiri_fail.py` teeb allalaaditava ostunimekirja, `retseptid.py` saadab retseptid lehele.
+- `scraperid/` – Rimi, Selveri ja Maxima hindade scraperid. GitHub Actions käivitab need igal pühapäeval ja uuendab hinnad automaatselt.
+- `andmed/` – retseptid, koostisosad, tooted ja hinnad.
+
+Oma arvutis käivitamine: `python3 kaivita_lokaalselt.py` ja ava http://127.0.0.1:8000
+
+## Allikad
+
+- Kood on kirjutatud tehisintellekti Claude (Anthropic) abiga, tiim on koodi läbi vaadanud ja testinud. Viited on ka iga koodifaili alguses.
+- Toidufotod: Wikimedia Commons, Pixabay ja Pexels; iga foto autor ja litsents on avalehel jaotises "Fotode autorid". Üks pilt (hakklihakaste) on tiimi tehtud AI-pilt.
+- Font: DM Sans (SIL Open Font License).
