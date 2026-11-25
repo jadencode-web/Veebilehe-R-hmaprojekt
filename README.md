@@ -1,6 +1,6 @@
 # Veebilehe-Ryhmaprojekt - Toidukordade planeerija ja ostukorvi hinnavõrdlus
 
-**SoodneKorv** · Veebileht: LINK TULEB
+**SoodneKorv** · Veebileht: https://kodu.ut.ee/~reevo/
 
 ## Projekti tutvustus
 
