@@ -187,7 +187,7 @@ def tee_fail(sisend, tulemus):
         "{{VOTI}}": võti,
         "{{LINNUKESED}}": linnukesed,
         "{{TUKID}}": tükid,
-        "{{STIILID}}": stiilid,
+        "/*{{STIILID}}*/": stiilid,
     }
     for märk in asendused:
         mall = mall.replace(märk, asendused[märk])

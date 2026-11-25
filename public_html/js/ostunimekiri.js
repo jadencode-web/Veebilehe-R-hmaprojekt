@@ -6,7 +6,7 @@
    Allikad: MDN Web Docs – fetch (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch),
    Intl.NumberFormat (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat),
    Blob ja URL.createObjectURL (https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL_static).
-   Kasutab faili uhine.js konstante ja funktsioone. */
+   Kasutab faili uhine.js konstante ja funktsioone ning faili arvutus.js, kui server Pythonit ei käivita. */
 
 const plaan = loePlaan();                      // näiteks {valikud: {"0|hommik": "Plov"}, portsjonid: 2}
 let tulemus = null;                            // serveri vastus, vt arvuta.py funktsioon võrdle_poode
@@ -154,13 +154,20 @@ async function arvuta() {
   teade.hidden = false;
 
   try {
-    const vastus = await fetch('cgi-bin/arvuta.py', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ valikud })
-    });
-    if (!vastus.ok) throw new Error(`server vastas veaga ${vastus.status}`);
-    const andmed = await vastus.json();
+    let andmed = null;
+    try {
+      // 1) Pythoni backend (cgi-bin/arvuta.py)
+      const vastus = await fetch('cgi-bin/arvuta.py', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ valikud })
+      });
+      if (onJson(vastus)) andmed = await vastus.json();
+    } catch (viga) {
+      // Pythoni skript ei vastanud
+    }
+    // 2) Kui server Pythonit ei käivita, arvutame sama asja brauseris (js/arvutus.js)
+    if (!andmed) andmed = await vordlePoodeBrauseris(valikud);
     if (andmed.viga) throw new Error(andmed.viga);
     tulemus = andmed;
     teade.hidden = true;
@@ -186,13 +193,20 @@ async function laadiAlla() {
   };
   nupp.disabled = true;
   try {
-    const vastus = await fetch('cgi-bin/ostunimekiri_fail.py', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(paring)
-    });
-    if (!vastus.ok) throw new Error(`server vastas veaga ${vastus.status}`);
-    const fail = await vastus.blob();
+    let fail = null;
+    try {
+      // 1) Pythoni backend (cgi-bin/ostunimekiri_fail.py)
+      const vastus = await fetch('cgi-bin/ostunimekiri_fail.py', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(paring)
+      });
+      if (vastus.ok && (vastus.headers.get('Content-Type') || '').includes('text/html')) fail = await vastus.blob();
+    } catch (viga) {
+      // Pythoni skript ei vastanud
+    }
+    // 2) Kui server Pythonit ei käivita, teeme faili brauseris (js/arvutus.js)
+    if (!fail) fail = await teeFailBrauseris(paring, tulemus);
     const aadress = URL.createObjectURL(fail);
     const link = document.createElement('a');
     link.href = aadress;

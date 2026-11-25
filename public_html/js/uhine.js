@@ -44,12 +44,25 @@ function salvestaPlaan(plaan) {
 }
 
 // Küsib serverist (Pythoni skriptilt cgi-bin/retseptid.py) kõigi retseptide nimekirja.
+// Kõigepealt proovib Pythoni skripti. Kui server Pythonit ei käivita (näiteks kodu.ut.ee),
+// loeb retseptid otse failist andmed/retseptid.json.
 async function laeRetseptid() {
-  const vastus = await fetch('cgi-bin/retseptid.py');
+  try {
+    const vastus = await fetch('cgi-bin/retseptid.py');
+    if (onJson(vastus)) return await vastus.json();
+  } catch (viga) {
+    // Pythoni skript ei vastanud, proovime faili
+  }
+  const vastus = await fetch('andmed/retseptid.json');
   if (!vastus.ok) {
     throw new Error('Retseptide laadimine ebaõnnestus (' + vastus.status + ').');
   }
   return vastus.json();
+}
+
+// Kas serveri vastus on päriselt JSON? Kui server Pythonit ei käivita, saadab ta faili teksti (text/plain).
+function onJson(vastus) {
+  return vastus.ok && (vastus.headers.get('Content-Type') || '').includes('application/json');
 }
 
 // Teeb teksti HTML-is turvaliseks, et retsepti nimes olevad märgid ei rikuks lehte.

@@ -1,0 +1,446 @@
+{
+ "pood": "Selver",
+ "kogutud": "2026-11-25T15:40:40",
+ "tooted": [
+  {
+   "id": "kartul",
+   "nimi": "Kartul pesemata, kg",
+   "link": "https://www.selver.ee/kartul-pesemata-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 0.35
+  },
+  {
+   "id": "sibul",
+   "nimi": "Mugulsibul, kg",
+   "link": "https://www.selver.ee/mugulsibul-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 0.39
+  },
+  {
+   "id": "kapsas",
+   "nimi": "Peakapsas, kg",
+   "link": "https://www.selver.ee/peakapsas-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 0.35
+  },
+  {
+   "id": "hapukapsas",
+   "nimi": "Hapukapsas porgandiga, KADARBIKU KÖÖGIVILI, 900 g",
+   "link": "https://www.selver.ee/hapukapsas-porgandiga-kadarbiku-koogivili-900-g",
+   "kogus": 900,
+   "kaalukaup": false,
+   "hind": 2.49
+  },
+  {
+   "id": "peet",
+   "nimi": "Aurutatud riivitud peet, DIMDINI, 350g",
+   "link": "https://www.selver.ee/aurutatud-riivitud-peet-dimdini-350g",
+   "kogus": 350,
+   "kaalukaup": false,
+   "hind": 1.19
+  },
+  {
+   "id": "kurk",
+   "nimi": "Kurk Luunja, GRÜNE FEE, kg",
+   "link": "https://www.selver.ee/kurk-luunja-grune-fee-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 4.69
+  },
+  {
+   "id": "tomat",
+   "nimi": "Tomat, kg",
+   "link": "https://www.selver.ee/tomat-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 0.99
+  },
+  {
+   "id": "paprika",
+   "nimi": "Paprika punane, kg",
+   "link": "https://www.selver.ee/paprika-punane-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 2.29
+  },
+  {
+   "id": "suvikõrvits",
+   "nimi": "Suvikõrvits roheline, kg",
+   "link": "https://www.selver.ee/suvikorvits-roheline-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 2.49
+  },
+  {
+   "id": "brokoli",
+   "nimi": "Spargelkapsas ehk brokoli, kg",
+   "link": "https://www.selver.ee/spargelkapsas-ehk-brokoli-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 3.29
+  },
+  {
+   "id": "lillkapsas",
+   "nimi": "Lillkapsas, kg",
+   "link": "https://www.selver.ee/lillkapsas-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 3.39
+  },
+  {
+   "id": "küüslauk",
+   "nimi": "Küüslauk, kg",
+   "link": "https://www.selver.ee/kuuslauk-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 4.99
+  },
+  {
+   "id": "till",
+   "nimi": "Till taldrikul, GRÜNE FEE, 25 g",
+   "link": "https://www.selver.ee/till-taldrikul-grune-fee-25-g",
+   "kogus": 25,
+   "kaalukaup": false,
+   "hind": 1.79
+  },
+  {
+   "id": "šampinjonid",
+   "nimi": "Šampinjonid, kg",
+   "link": "https://www.selver.ee/sampinjonid-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 4.69
+  },
+  {
+   "id": "õun",
+   "nimi": "Õun Paulared, kg",
+   "link": "https://www.selver.ee/oun-paulared-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 0.49
+  },
+  {
+   "id": "banaan",
+   "nimi": "Banaan, kg",
+   "link": "https://www.selver.ee/banaan-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 1.29
+  },
+  {
+   "id": "spinat",
+   "nimi": "Hakitud spinat, FIRST PRICE, 900 g",
+   "link": "https://www.selver.ee/hakitud-spinat-first-price-900-g",
+   "kogus": 900,
+   "kaalukaup": false,
+   "hind": 2.49
+  },
+  {
+   "id": "herned",
+   "nimi": "Herned, FIRST PRICE, 575 g",
+   "link": "https://www.selver.ee/herned-first-price-575-g",
+   "kogus": 575,
+   "kaalukaup": false,
+   "hind": 2.29
+  },
+  {
+   "id": "marjad",
+   "nimi": "Marjasegu, MAAHÄRRA, 300 g",
+   "link": "https://www.selver.ee/marjasegu-maaharra-300-g",
+   "kogus": 300,
+   "kaalukaup": false,
+   "hind": 2.59
+  },
+  {
+   "id": "hakkliha",
+   "nimi": "Seahakkliha, MAKS&MOORITS, 500 g",
+   "link": "https://www.selver.ee/seahakkliha-maks-moorits-500-g",
+   "kogus": 500,
+   "kaalukaup": false,
+   "hind": 1.99
+  },
+  {
+   "id": "kanafilee",
+   "nimi": "Broileri rinnafilee, FARMER GRANT, 500 g",
+   "link": "https://www.selver.ee/broileri-rinnafilee-farmer-grant-500-g",
+   "kogus": 500,
+   "kaalukaup": false,
+   "hind": 2.99
+  },
+  {
+   "id": "kanakoivad",
+   "nimi": "Jahutatud broileripoolkoivad, TALLEGG, kg",
+   "link": "https://www.selver.ee/jahutatud-broileripoolkoivad-tallegg-kg",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 5.99
+  },
+  {
+   "id": "sealiha",
+   "nimi": "Sea kaelakarbonaad, RAKVERE, kg",
+   "link": "https://www.selver.ee/sea-kaelakarbonaad-rakvere-kg-t000035607",
+   "kogus": 1000,
+   "kaalukaup": true,
+   "hind": 5.99
+  },
+  {
+   "id": "viiner",
+   "nimi": "Koduviiner, MAKS&MOORITS, 500 g",
+   "link": "https://www.selver.ee/koduviiner-maks-moorits-500-g",
+   "kogus": 500,
+   "kaalukaup": false,
+   "hind": 1.59
+  },
+  {
+   "id": "lõhefilee",
+   "nimi": "Lõhefilee portsjonid, AVEKTRA, 250 g",
+   "link": "https://www.selver.ee/lohefilee-portsjonid-avektra-250-g",
+   "kogus": 250,
+   "kaalukaup": false,
+   "hind": 8.53
+  },
+  {
+   "id": "kilu",
+   "nimi": "Balti vürtsikilud, BRIIS, 400 g",
+   "link": "https://www.selver.ee/balti-vurtsikilud-briis-400-g",
+   "kogus": 400,
+   "kaalukaup": false,
+   "hind": 1.95
+  },
+  {
+   "id": "tuunikala",
+   "nimi": "Tuunikala suured tükid õlis, KAPTEN GRANT, 185 g",
+   "link": "https://www.selver.ee/tuunikala-suured-tukid-olis-kapten-grant-185-g",
+   "kogus": 185,
+   "kaalukaup": false,
+   "hind": 1.99
+  },
+  {
+   "id": "munad",
+   "nimi": "Mahe kanamuna M, KIKERIKII ÖKOMUNA, 10 tk",
+   "link": "https://www.selver.ee/mahe-kanamuna-m-kikerikii-okomuna-10-tk",
+   "kogus": 10,
+   "kaalukaup": false,
+   "hind": 5.79
+  },
+  {
+   "id": "piim",
+   "nimi": "Piim 2,5% pure, ALMA, 1 L",
+   "link": "https://www.selver.ee/piim-2-5-pure-alma-1-l",
+   "kogus": 1000,
+   "kaalukaup": false,
+   "hind": 1.25
+  },
+  {
+   "id": "hapukoor",
+   "nimi": "Hapukoor 20% kiles, ALMA, 500 g",
+   "link": "https://www.selver.ee/hapukoor-20-kiles-alma-500-g",
+   "kogus": 500,
+   "kaalukaup": false,
+   "hind": 1.15
+  },
+  {
+   "id": "koor",
+   "nimi": "Kohvikoor 10%, ALMA, 380 ml",
+   "link": "https://www.selver.ee/kohvikoor-10-alma-380-ml",
+   "kogus": 380,
+   "kaalukaup": false,
+   "hind": 1.15
+  },
+  {
+   "id": "kohupiim",
+   "nimi": "Kohupiim lahja, ALMA, 200 g",
+   "link": "https://www.selver.ee/kohupiim-lahja-alma-200-g",
+   "kogus": 200,
+   "kaalukaup": false,
+   "hind": 0.99
+  },
+  {
+   "id": "jogurt",
+   "nimi": "Maitsestamata jogurt 5%, SAARE, 400 g",
+   "link": "https://www.selver.ee/maitsestamata-jogurt-5-saare-400-g",
+   "kogus": 400,
+   "kaalukaup": false,
+   "hind": 1.89
+  },
+  {
+   "id": "juust",
+   "nimi": "Riivjuust laktoosivaba, MO SAAREMAA, 400 g",
+   "link": "https://www.selver.ee/riivjuust-laktoosivaba-mo-saaremaa-400-g",
+   "kogus": 400,
+   "kaalukaup": false,
+   "hind": 3.49
+  },
+  {
+   "id": "või",
+   "nimi": "Või 82%, TERE, 200 g",
+   "link": "https://www.selver.ee/voi-82-tere-200-g",
+   "kogus": 200,
+   "kaalukaup": false,
+   "hind": 2.59
+  },
+  {
+   "id": "rukkileib",
+   "nimi": "Rehe rukkileib viilutatud, EESTI PAGAR, 600 g",
+   "link": "https://www.selver.ee/rehe-rukkileib-viilutatud-eesti-pagar-600-g",
+   "kogus": 600,
+   "kaalukaup": false,
+   "hind": 1.29
+  },
+  {
+   "id": "sai",
+   "nimi": "Tosta röstsai viilutatud, EESTI PAGAR, 500 g",
+   "link": "https://www.selver.ee/tosta-rostsai-viilutatud-eesti-pagar-500-g",
+   "kogus": 500,
+   "kaalukaup": false,
+   "hind": 1.31
+  },
+  {
+   "id": "tortilla",
+   "nimi": "Fazer Street Food minitortillad, FAZER, 240 g",
+   "link": "https://www.selver.ee/fazer-street-food-minitortillad-fazer-240-g",
+   "kogus": 240,
+   "kaalukaup": false,
+   "hind": 2.09
+  },
+  {
+   "id": "pasta",
+   "nimi": "Pasta durum Chiffari Lisci, TARTU MILL, 500 g",
+   "link": "https://www.selver.ee/pasta-durum-chiffari-lisci-tartu-mill-500-g",
+   "kogus": 500,
+   "kaalukaup": false,
+   "hind": 1.39
+  },
+  {
+   "id": "riis",
+   "nimi": "Basmati riis, VESKI MATI, 500 g",
+   "link": "https://www.selver.ee/basmati-riis-veski-mati-500-g",
+   "kogus": 500,
+   "kaalukaup": false,
+   "hind": 2.69
+  },
+  {
+   "id": "kaerahelbed",
+   "nimi": "Täistera jämedad kaerahelbed, TARTU MILL, 500 g",
+   "link": "https://www.selver.ee/taistera-jamedad-kaerahelbed-tartu-mill-500-g",
+   "kogus": 500,
+   "kaalukaup": false,
+   "hind": 1.29
+  },
+  {
+   "id": "manna",
+   "nimi": "Manna, VESKI MATI, 500 g",
+   "link": "https://www.selver.ee/manna-veski-mati-500-g",
+   "kogus": 500,
+   "kaalukaup": false,
+   "hind": 1.02
+  },
+  {
+   "id": "nisujahu",
+   "nimi": "Nisujahu T405, KALEW, 1 kg",
+   "link": "https://www.selver.ee/nisujahu-t405-kalew-1-kg",
+   "kogus": 1000,
+   "kaalukaup": false,
+   "hind": 0.99
+  },
+  {
+   "id": "odrakruubid",
+   "nimi": "Odrakruup, TARTU MILL, 1 kg",
+   "link": "https://www.selver.ee/odrakruup-tartu-mill-1-kg",
+   "kogus": 1000,
+   "kaalukaup": false,
+   "hind": 1.43
+  },
+  {
+   "id": "läätsed",
+   "nimi": "Rohelised läätsed, NATCO, 500 g",
+   "link": "https://www.selver.ee/rohelised-laatsed-natco-500-g",
+   "kogus": 500,
+   "kaalukaup": false,
+   "hind": 3.65
+  },
+  {
+   "id": "suhkur",
+   "nimi": "Suhkur, DIAMANT, 1 kg",
+   "link": "https://www.selver.ee/suhkur-diamant-1-kg",
+   "kogus": 1000,
+   "kaalukaup": false,
+   "hind": 0.69
+  },
+  {
+   "id": "purustatud_tomatid",
+   "nimi": "Purustatud tomatid, POMI, 400 g",
+   "link": "https://www.selver.ee/purustatud-tomatid-pomi-400-g",
+   "kogus": 400,
+   "kaalukaup": false,
+   "hind": 1.55
+  },
+  {
+   "id": "tomatipasta",
+   "nimi": "Tomatipasta, POMI, 200 g",
+   "link": "https://www.selver.ee/tomatipasta-pomi-200-g",
+   "kogus": 200,
+   "kaalukaup": false,
+   "hind": 1.15
+  },
+  {
+   "id": "kookospiim",
+   "nimi": "Kookoskreem, THAI CHOICE, 400 ml",
+   "link": "https://www.selver.ee/kookoskreem-thai-choice-400-ml",
+   "kogus": 400,
+   "kaalukaup": false,
+   "hind": 2.99
+  },
+  {
+   "id": "kikerherned",
+   "nimi": "Kikerherned vees, ORGANIC FOODS, 400 g",
+   "link": "https://www.selver.ee/kikerherned-vees-organic-foods-400-g",
+   "kogus": 400,
+   "kaalukaup": false,
+   "hind": 1.79
+  },
+  {
+   "id": "mais",
+   "nimi": "Magus mais, BONDUELLE, 425 ml",
+   "link": "https://www.selver.ee/magus-mais-bonduelle-425-ml",
+   "kogus": 340,
+   "kaalukaup": false,
+   "hind": 2.15
+  },
+  {
+   "id": "õli",
+   "nimi": "Oliiviõli rafineeritud ja väärisoliivõli Extra Light, BORGES, 1 l",
+   "link": "https://www.selver.ee/oliivioli-rafineeritud-ja-vaarisoliivoli-extra-light-borges-1-l",
+   "kogus": 1000,
+   "kaalukaup": false,
+   "hind": 16.99
+  },
+  {
+   "id": "moos",
+   "nimi": "Maasikamoos, PÕLTSAMAA, 600 g",
+   "link": "https://www.selver.ee/maasikamoos-poltsamaa-600-g",
+   "kogus": 600,
+   "kaalukaup": false,
+   "hind": 3.59
+  },
+  {
+   "id": "riivsai",
+   "nimi": "Riivsai, TARTU MILL, 400 g",
+   "link": "https://www.selver.ee/riivsai-tartu-mill-400-g",
+   "kogus": 400,
+   "kaalukaup": false,
+   "hind": 1.31
+  },
+  {
+   "id": "hapukurk",
+   "nimi": "Hapukurk Peipsi pakitud, GERMANI TALU, 400 g",
+   "link": "https://www.selver.ee/hapukurk-peipsi-pakitud-germani-talu-400-g",
+   "kogus": 400,
+   "kaalukaup": false,
+   "hind": 3.45
+  }
+ ]
+}

@@ -95,7 +95,8 @@ Pärast seda tegime kõike koos: valisime ühise disaini, retseptid, pildid ja t
 - `public_html/` – veebileht: kolm HTML-lehte, ühine CSS (`css/uhine.css`) ja iga lehe oma CSS ning JavaScript.
 - `public_html/cgi-bin/` – Pythoni backend (ilma raamistiketa): `arvuta.py` arvutab odavaima ostukorvi, `ostunimekiri_fail.py` teeb allalaaditava ostunimekirja, `retseptid.py` saadab retseptid lehele.
 - `scraperid/` – Rimi, Selveri ja Maxima hindade scraperid. GitHub Actions käivitab need igal pühapäeval ja uuendab hinnad automaatselt.
-- `andmed/` – retseptid, koostisosad, tooted ja hinnad.
+- `andmed/` – retseptid, koostisosad, tooted ja hinnad. Koopia on ka kaustas `public_html/andmed/`, et leht saaks neid lugeda.
+- `public_html/js/arvutus.js` – sama arvutus JavaScriptis. kodu.ut.ee server ei käivita Pythoni faile, seepärast teeb leht seal arvutuse brauseris. Kui server Pythonit käivitab (näiteks `python3 kaivita_lokaalselt.py`), kasutab leht Pythoni backendi.
 
 Oma arvutis käivitamine: `python3 kaivita_lokaalselt.py` ja ava http://127.0.0.1:8000
 
